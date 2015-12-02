@@ -1,80 +1,363 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://developer.oneboxtickets.com/ticketing-api
 
 # onebox-ticketing-api
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+## API to let an onsale channel to:
++ Search for events, sessions, venue price zones and its availability
++ Provide a complete shopping cart management capabilities
++ Book tickets in two simple steps:
+  + Reserve tickets by locking its availability for a while
+  + Confirm reserved tickets
++ Release Locked tickets
++ Cancel an already booked and confirmed tickets.
 
-## Questions Collection [/questions]
+To do so, we have used a **API Blueprint** standard, **apiary** as an online editing and mocking tool, **aglio** to document it and **getsandbox** as a sandbox provider:
++ [API Blueprint](https://apiblueprint.org/)
++ [apiary.io](http://docs.oneboxdynamicpricingapi.apiary.io/)
++ [getsandbox.com](http://onebox-ticketing-api.getsandbox.com/)
++ [aglio](https://github.com/danielgtaylor/aglio)
++ [github](https://github.com/joliva-ob/onebox-ticketing-api)
++ [onebox-developer](http://developer.oneboxtickets.com/ticketing-api/)
 
-### List All Questions [GET]
+## OAuth2 Requests [/oauth/token]
 
-+ Response 200 (application/json)
+### Oauth2 Request Access Token [POST]
 
-        [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
-        ]
-
-### Create a New Question [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+You will need to use OAuth to access the API.  Write to us at api-support@oneboxtm.com.  We will give you a client ID and client secret. Use this as shown in the following call in order to retrieve a token.
+Once you have a token you can use it in all API calls as shown below.
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
+          "grant_type": "password",
+          "client_id": [CLIENT_ID],
+          "client_secret": [CLIENT_SECRET],
+          "password": [YOURPASSWORD],
+          "username": [YOURUSERNAME]
+        }
+
++ Response 201
+
+        {
+          "access_token": "[OAUTH2_TOKEN]",
+          "token_type":"bearer",
+          "expires_in":7200,
+          "refresh_token": "[REFRESH_TOKEN]"
+        }
+
++ Response 400 (application/json)
+
+        {
+          "error": "Bad request",
+          "error_description": "There was a syntax error, check your params request and try it again."
+        }
+
++ Response 401 (application/json)
+
+        {
+          "error": "unauthorized",
+          "error_description": "Full authentication is required to access this resource"
+        }
+
+## Events [/ticketing-api/1.0/events?id&start_date&end_date&min_price&max_price&city_id6latitude&longitude&radius&is_seats_available&page&page_size]
+List all the key data from the events.
+
+See below the description of the response fields we consider that need to be explained:
+
+| Response Field                   | Description                             |
+|----------------------------------|-----------------------------------------|
+| version                          | (Text) Version of the API               |
+| href                             | (Text) Url of the API doc               |
+| trace_id                         | (Text) unique identifier of the request |
+| parameters                       | (Object) Request filtering used         |
+
+### List all events [GET]
+
+Collection of events and its session dates.
+
++ Request
+
+  + Headers
+
+            Authorization: Bearer [OAUTH2_TOKEN]
+            Accept: application/json
+
++ Parameters
+    + id (optional, string) ... Filter by given event id
+    + start_date (optional, date) ... Filter by starting date ('2015-08-05T08:40:51.620Z')
+    + end_date (optional, date) ... Filter by final date
+    + min_price (optional, number) ... Filter from a minimum price and above.
+    + max_price (optional, number) ... Filter by a maximum price and below.
+    + city_id (optional, string) ... Filter by a given city id.
+    + latitude (optional, number) ... It needs a longitude and radius params to search arround a GPS location.
+    + longitude (optional, number) ... It needs a latitude and radius params to search arround a GPS location.
+    + radius (optional, number) ... Filter by a radius applied arround a GPS location.
+    + is_seats_available (optional, enum[boolean])
+      Filter whether is any seat available to book or not:
+        + Members
+          + `TRUE` - Filter by events with seats still available.
+          + `FALSE` - Filter by events with no seat is still available.
+    + page (optional, number) ... Paginate response to point at the given page number.
+    + page_size (optional, number) ... Indicate the maximum number of elements per page.
+
++ Response 200 (application/json)
+
+        {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/ticketing-api/1.0/events/",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "parameters":
+            {
+              "page": 2,
+              "page_size": 20
+            },
+            "events": [
+              {
+                "id": "JFSKF34K2K4",
+                "event_name": "Campeonato liga LFP 15-16",
+                "start_date": "2015-08-05T08:40:51.620Z",
+                "end_date": "2015-08-05T08:40:51.620Z",
+                "location":{
+                  "country": "España",
+                  "city_id": "4087",
+                  "city_name": "Barcelona",
+                  "zip_code": "fdjkw34-4",
+                  "longitude": 342.30,
+                  "latitude": 342342.33
+                },
+                "venue_id": "2",
+                "venue_name": "Camp Nou",
+                "event_dates": [
+                  {
+                      "id": "12",
+                      "date": "2015-08-05T08:40:51.620Z",
+                      "price_id": "21",
+                      "price_level_id": "454",
+                      "min_price": 23.3,
+                      "max_price": 50.33,
+                      "seats_available": 34,
+                      "links":[
+                        {
+                          "name": "eventdates",
+                          "prompt": "Event dates",
+                          "rel": "eventdates",
+                          "href": "eventdates?id=12",
+                          "render": "link"
+                        }
+                      ]
+                  },
+                  {
+                      "id": "13",
+                      "date": "2015-08-05T08:40:51.620Z",
+                      "price_id": "21",
+                      "price_level_id": "454",
+                      "min_price": 23.3,
+                      "max_price": 50.33,
+                      "seats_available": 23,
+                      "links":[
+                        {
+                          "name": "eventdates",
+                          "prompt": "Event dates",
+                          "rel": "eventdates",
+                          "href": "eventdates?id=12",
+                          "render": "link"
+                        }
+                      ]
+                  }
+                ],
+              }
+            ],
+            "links": [
+              {
+                "name": "next_page",
+                "prompt": "Next",
+                "rel": "next",
+                "href": "events?page=3&page_size=20",
+                "render": "link"
+              },
+              {
+                "name": "previous_page",
+                "prompt": "Back",
+                "rel": "back",
+                "href": "events?page=1&page_size=20",
+                "render": "link"
+              }
             ]
         }
 
-+ Response 201 (application/json)
++ Response 204 (application/json)
 
-    + Headers
++ Response 400 (application/json)
 
-            Location: /questions/2
+        {
+          "error": "Bad request",
+          "error_description": "There was a syntax error, check your params request and try it again."
+        }
 
-    + Body
++ Response 401 (application/json)
 
+        {
+          "error": "unauthorized",
+          "error_description": "Full authentication is required to access this resource"
+        }
+
+## Event dates [/ticketing-api/1.0/events/{event_id}/event_dates?id&start_date&end_date&page&page_size]
+List all the key data for each evet date (sesión in spanish) like zones, price zone levels, available promotions and availability by zone, from a given event.
+
+See below the description of the response fields we consider that need to be explained:
+
+| Response Field                   | Description                             |
+|----------------------------------|-----------------------------------------|
+| version                          | (Text) Version of the API               |
+| href                             | (Text) Url of the API doc               |
+| trace_id                         | (Text) unique identifier of the request |
+| parameters                       | (Object) Request filtering used         |
+
+### List all event dates [GET]
+
++ Request
+
+  + Headers
+
+            Authorization: Bearer [OAUTH2_TOKEN]
+            Accept: application/json
+
++ Parameters
+
+    + event_id (required, string) ... Parent event to get insights.
+    + start_date (optional, date) ... Filter by starting date (`2015-08-05T08:40:51.620Z`)
+    + end_date (optional, date) ... Filter by final date
+    + page (optional, number) ... Paginate response to the given page number
+    + page_size (optional, number) ... Indicate the maximum number of elements per page.
+
++ Response 200 (application/json)
+
+        {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/ticketing-api/1.0/prices",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "parameters":
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
+              "event_id": "4345",
+              "id": "2"
+            },
+            "event_dates": [
+              {
+                "id": "44",
+                "price_levels":[
+                  {
+                    "id": "454",
+                    "price": 23.3,
+                    "zone_availability_id": "432423"
+                    "available_promotions":[
+                      {
+
+                      }
+                    ]
+                  },
+                  {
+                    "id": "455",
+                    "price": 33.3,
+                    "zone_id": "432423"
+                    "available_promotions":[
+                      {
+
+                      }
+                    ]
+                  }
                 ]
-            }
+              }
+            ],
+            "links": []
+        }
+
++ Response 204 (application/json)
+
++ Response 400 (application/json)
+
+        {
+          "error": "Bad request",
+          "error_description": "There was a syntax error, check your params request and try it again."
+        }
+
++ Response 401 (application/json)
+
+        {
+          "error": "unauthorized",
+          "error_description": "Full authentication is required to access this resource"
+        }
+
+## Zone availabilities [/ticketing-api/1.0/events/{event_id}/event_dates/{event_date_id}/zone_availabilities?id]
+Retrieve a detailed zone map with the availability of each seat from that zone, venue, event and date.
+
+### List all zone availabilities [GET]
+
++ Parameters
+
+    + id (required, string) ... Update a given price id
+
++ Request
+
+      + Headers
+
+            Authorization: Bearer [OAUTH2_TOKEN]
+            Accept: application/json
+
++ Response 200 (application/json)
+
+        {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/ticketing-api/1.0/prices",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "parameters":
+            {
+              "event_id": "4345",
+              "id": "2"
+            },
+            "event_dates": [
+              {
+                "id": "44",
+                "price_levels":[
+                  {
+                    "id": "454",
+                    "price": 23.3,
+                    "zone_availability_id": "432423"
+                    "available_promotions":[
+                      {
+
+                      }
+                    ]
+                  },
+                  {
+                    "id": "455",
+                    "price": 33.3,
+                    "zone_id": "432423"
+                    "available_promotions":[
+                      {
+
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "links": []
+        }
+
++ Response 400 (application/json)
+
+        {
+          "error": "Bad request",
+          "error_description": "There was a syntax error, check your params request and try it again."
+        }
+
++ Response 401 (application/json)
+
+        {
+          "error": "unauthorized",
+          "error_description": "Full authentication is required to access this resource"
+        }
