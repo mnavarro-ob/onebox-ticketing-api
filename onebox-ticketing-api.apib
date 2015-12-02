@@ -1,17 +1,24 @@
 FORMAT: 1A
-HOST: http://developer.oneboxtickets.com/dynamic-pricing-api/index.html
+HOST: http://developer.oneboxtickets.com/ticketing-api
 
-# onebox-dynamic-pricing-api
+# onebox-ticketing-api
 
-API to share CRM data to our integrated clients.
+## API to let an onsale channel to:
++ Search for events, sessions, venue price zones and its availability
++ Provide a complete shopping cart management capabilities
++ Book tickets in two simple steps:
+  + Reserve tickets by locking its availability for a while
+  + Confirm reserved tickets
++ Release Locked tickets
++ Cancel an already booked and confirmed tickets.
 
 To do so, we have used a **API Blueprint** standard, **apiary** as an online editing and mocking tool, **aglio** to document it and **getsandbox** as a sandbox provider:
 + [API Blueprint](https://apiblueprint.org/)
 + [apiary.io](http://docs.oneboxdynamicpricingapi.apiary.io/)
-+ [getsandbox.com](http://onebox-dynamic-pricing-api.getsandbox.com/)
++ [getsandbox.com](http://onebox-ticketing-api.getsandbox.com/)
 + [aglio](https://github.com/danielgtaylor/aglio)
-+ [github](https://github.com/joliva-ob/onebox-dynamic-pricing-api)
-+ [onebox-developer](http://developer.oneboxtickets.com/dynamic-pricing-api/)
++ [github](https://github.com/joliva-ob/onebox-ticketing-api)
++ [onebox-developer](http://developer.oneboxtickets.com/ticketing-api/)
 
 ## OAuth2 Requests [/oauth/token]
 
@@ -23,20 +30,20 @@ Once you have a token you can use it in all API calls as shown below.
 + Request (application/json)
 
         {
-            "grant_type": "password",
-            "client_id": [CLIENT_ID],
-            "client_secret": [CLIENT_SECRET],
-            "password": [YOURPASSWORD],
-            "username": [YOURUSERNAME]
+          "grant_type": "password",
+          "client_id": [CLIENT_ID],
+          "client_secret": [CLIENT_SECRET],
+          "password": [YOURPASSWORD],
+          "username": [YOURUSERNAME]
         }
 
 + Response 201
 
         {
-            "access_token": "[OAUTH2_TOKEN]",
-            "token_type":"bearer",
-            "expires_in":7200,
-            "refresh_token": "[REFRESH_TOKEN]"
+          "access_token": "[OAUTH2_TOKEN]",
+          "token_type":"bearer",
+          "expires_in":7200,
+          "refresh_token": "[REFRESH_TOKEN]"
         }
 
 + Response 400 (application/json)
@@ -53,8 +60,8 @@ Once you have a token you can use it in all API calls as shown below.
           "error_description": "Full authentication is required to access this resource"
         }
 
-## Sales Collection [/dynamic-pricing-api/1.0/sales{?event_id,start_date,end_date,page}]
-List all the key data from the sales. It is also allowed filtering between dates and paging.
+## Events [/ticketing-api/1.0/events?id&start_date&end_date&min_price&max_price&city_id6latitude&longitude&radius&is_seats_available&page&page_size]
+List all the key data from the events.
 
 See below the description of the response fields we consider that need to be explained:
 
@@ -65,89 +72,101 @@ See below the description of the response fields we consider that need to be exp
 | trace_id                         | (Text) unique identifier of the request |
 | parameters                       | (Object) Request filtering used         |
 
-### List All Sales [GET]
+### List all events [GET]
 
-Collection of sales, where each sale can have got several different products (ticket items).
+Collection of events and its session dates.
 
 + Request
 
   + Headers
 
             Authorization: Bearer [OAUTH2_TOKEN]
-            Accept: application/vnd.collection+json
+            Accept: application/json
 
 + Parameters
-    + event_id (optional, string) ... Filter by given event id
+    + id (optional, string) ... Filter by given event id
     + start_date (optional, date) ... Filter by starting date ('2015-08-05T08:40:51.620Z')
     + end_date (optional, date) ... Filter by final date
-    + page (optional, number) ... Paginate response to the given page number
+    + min_price (optional, number) ... Filter from a minimum price and above.
+    + max_price (optional, number) ... Filter by a maximum price and below.
+    + city_id (optional, string) ... Filter by a given city id.
+    + latitude (optional, number) ... It needs a longitude and radius params to search arround a GPS location.
+    + longitude (optional, number) ... It needs a latitude and radius params to search arround a GPS location.
+    + radius (optional, number) ... Filter by a radius applied arround a GPS location.
+    + is_seats_available (optional, enum[boolean])
+      Filter whether is any seat available to book or not:
+        + Members
+          + `TRUE` - Filter by events with seats still available.
+          + `FALSE` - Filter by events with no seat is still available.
+    + page (optional, number) ... Paginate response to point at the given page number.
+    + page_size (optional, number) ... Indicate the maximum number of elements per page.
 
 + Response 200 (application/json)
 
         {
-          "collection":
-          {
             "version": "1.0",
-            "href": "http://www.oneboxtm.com/dynamic-pricing-api/1.0/sales/",
+            "href": "http://www.oneboxtm.com/ticketing-api/1.0/events/",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
             "request_date": "2015-08-05T08:40:51.620Z",
             "parameters":
             {
-              "event_id": "",
-              "start_date": "",
-              "end_date": "",
-              "page": 2
+              "page": 2,
+              "page_size": 20
             },
-            "sales": [
+            "events": [
               {
                 "id": "JFSKF34K2K4",
-                "event_id": "432",
-                "event_date": "2015-08-05",
                 "event_name": "Campeonato liga LFP 15-16",
-                "transaction_date": "2015-08-05T08:40:51.620Z",
-                "transaction_type": "SALE",
-                "buyer_type_code": "INTEGRATION",
-                "products_number": 2,
-                "channel_id": "int_channel@oneboxtm.com",
-                "products": [
+                "start_date": "2015-08-05T08:40:51.620Z",
+                "end_date": "2015-08-05T08:40:51.620Z",
+                "location":{
+                  "country": "España",
+                  "city_id": "4087",
+                  "city_name": "Barcelona",
+                  "zip_code": "fdjkw34-4",
+                  "longitude": 342.30,
+                  "latitude": 342342.33
+                },
+                "venue_id": "2",
+                "venue_name": "Camp Nou",
+                "event_dates": [
                   {
-                      "id": "432k23",
-                      "session_id": "12",
-                      "session_date": "2015-08-05T08:40:51.620Z",
-                      "session_name": "Liga Barcelona - Madrid",
-                      "venue_id": "2",
-                      "venue_name": "Camp Nou",
+                      "id": "12",
+                      "date": "2015-08-05T08:40:51.620Z",
                       "price_id": "21",
-                      "price_zone_id": "454",
-                      "price": 23.3,
-                      "section": "tribuna alta B",
-                      "seat": "10",
-                      "row": "8"
+                      "price_level_id": "454",
+                      "min_price": 23.3,
+                      "max_price": 50.33,
+                      "seats_available": 34,
+                      "links":[
+                        {
+                          "name": "eventdates",
+                          "prompt": "Event dates",
+                          "rel": "eventdates",
+                          "href": "eventdates?id=12",
+                          "render": "link"
+                        }
+                      ]
                   },
                   {
-                      "id": "432k24",
-                      "session_id": "12",
-                      "session_date": "2015-08-05T08:40:51.620Z",
-                      "session_name": "Liga Barcelona - Madrid",
-                      "venue_id": "2",
-                      "venue_name": "Camp Nou",
-                      "price_id": "22",
-                      "price_zone_id": "454",
-                      "price": 50.0,
-                      "section": "tribuna alta B",
-                      "seat": "10",
-                      "row": "7"
+                      "id": "13",
+                      "date": "2015-08-05T08:40:51.620Z",
+                      "price_id": "21",
+                      "price_level_id": "454",
+                      "min_price": 23.3,
+                      "max_price": 50.33,
+                      "seats_available": 23,
+                      "links":[
+                        {
+                          "name": "eventdates",
+                          "prompt": "Event dates",
+                          "rel": "eventdates",
+                          "href": "eventdates?id=12",
+                          "render": "link"
+                        }
+                      ]
                   }
                 ],
-                "links":[
-                  {
-                    "name": "summary",
-                    "prompt": "Summary",
-                    "rel": "summary",
-                    "href": "summaries?event_id=432",
-                    "render": "link"
-                  }
-                ]
               }
             ],
             "links": [
@@ -155,19 +174,17 @@ Collection of sales, where each sale can have got several different products (ti
                 "name": "next_page",
                 "prompt": "Next",
                 "rel": "next",
-                "href": "sales?page=3",
+                "href": "events?page=3&page_size=20",
                 "render": "link"
               },
               {
                 "name": "previous_page",
                 "prompt": "Back",
                 "rel": "back",
-                "href": "sales?page=1",
+                "href": "events?page=1&page_size=20",
                 "render": "link"
               }
             ]
-
-          }
         }
 
 + Response 204 (application/json)
@@ -186,8 +203,8 @@ Collection of sales, where each sale can have got several different products (ti
           "error_description": "Full authentication is required to access this resource"
         }
 
-## Prices Collection [/dynamic-pricing-api/1.0/prices{?start_date,end_date,page}]
-List all the key data from the prices. It is also allowed to filtering between dates and paging and by a given price id.
+## Event dates [/ticketing-api/1.0/events/{event_id}/event_dates?id&start_date&end_date&page&page_size]
+List all the key data for each evet date (sesión in spanish) like zones, price zone levels, available promotions and availability by zone, from a given event.
 
 See below the description of the response fields we consider that need to be explained:
 
@@ -198,304 +215,149 @@ See below the description of the response fields we consider that need to be exp
 | trace_id                         | (Text) unique identifier of the request |
 | parameters                       | (Object) Request filtering used         |
 
-### List All Prices [GET]
+### List all event dates [GET]
 
 + Request
 
   + Headers
 
             Authorization: Bearer [OAUTH2_TOKEN]
-            Accept: application/vnd.collection+json
+            Accept: application/json
 
 + Parameters
 
+    + event_id (required, string) ... Parent event to get insights.
     + start_date (optional, date) ... Filter by starting date (`2015-08-05T08:40:51.620Z`)
     + end_date (optional, date) ... Filter by final date
     + page (optional, number) ... Paginate response to the given page number
+    + page_size (optional, number) ... Indicate the maximum number of elements per page.
 
 + Response 200 (application/json)
 
         {
-          "collection":
-          {
             "version": "1.0",
-            "href": "http://www.oneboxtm.com/dynamic-pricing-api/1.0/prices",
+            "href": "http://www.oneboxtm.com/ticketing-api/1.0/prices",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
             "request_date": "2015-08-05T08:40:51.620Z",
             "parameters":
             {
-              "id": "",
-              "start_date": "",
-              "end_date": "",
-              "page": 2
+              "event_id": "4345",
+              "id": "2"
             },
-            "prices": [
+            "event_dates": [
               {
                 "id": "44",
-                "price": 23.3,
-                "price_zone_id": "454",
-                "price_zone_name": "Main grandstand low",
-                "event_id": "432",
-                "event_date": "2015-08-05",
-                "session_id": "12",
-                "session_date": "2015-08-05T08:40:51.620Z",
-                "venue_id": "2",
-                "venue_name": "FCB Camp Nou",
-                "buyer_type_code": "INTEGRATION",
-                "fee": 2.0,
-                "tax": 21.0,
-                "external_price_id": ""
-              },
-              {
-                "id": "322",
-                "price": 50.0,
-                "price_zone_id": "455",
-                "price_zone_name": "Main grandstand upper",
-                "event_id": "432",
-                "event_date": "2015-08-05",
-                "session_id": "12",
-                "session_date": "2015-08-05T08:40:51.620Z",
-                "venue_name": "FCB Camp Nou",
-                "venue_id": "2",
-                "buyer_type_code": "INTEGRATION",
-                "fee": 2.0,
-                "tax": 21.0,
-                "external_price_id": ""
-              }
-            ],
-            "links": [
-              {
-                "name": "next_page",
-                "prompt": "Next",
-                "rel": "next",
-                "href": "prices?page=3",
-                "render": "link"
-              },
-              {
-                "name": "previous_page",
-                "prompt": "Back",
-                "rel": "back",
-                "href": "prices?page=1",
-                "render": "link"
-              }
-            ]
-
-          }
-        }
-
-+ Response 204 (application/json)
-
-+ Response 400 (application/json)
-
-        {
-          "error": "Bad request",
-          "error_description": "There was a syntax error, check your params request and try it again."
-        }
-
-+ Response 401 (application/json)
-
-        {
-          "error": "unauthorized",
-          "error_description": "Full authentication is required to access this resource"
-        }
-
-## Price Operations [/dynamic-pricing-api/1.0/prices/{id}]
-Modification (PUT) and partial modification  (PATCH) are both of them allowed. Notice that PUT is the correct and safe way to perform the modification as PATCH is neither safe nor idempotent.
-
-### Partial modification of a Price [PATCH]
-
-+ Parameters
-
-    + id (required, string) ... Update a given price id
-
-+ Request
-
-      + Headers
-
-            Authorization: Bearer [OAUTH2_TOKEN]
-            Accept: application/vnd.collection+json
-
-      + Body
-
-            {
-              "id": "44",
-              "price": 23.3
-            }
-
-+ Response 200 (application/json)
-
-        {
-          "id": "44",
-          "price": 23.3,
-          "price_zone_id": "454",
-          "event_id": "432",
-          "event_date": "2015-08-05",
-          "session_id": "12",
-          "session_date": "2015-08-05T08:40:51.620Z",
-          "venue_id": "2",
-          "buyer_type_code": "INTEGRATION",
-          "fee": 2.0,
-          "tax": 21.0,
-          "external_price_id": ""
-        }
-
-+ Response 400 (application/json)
-
-        {
-          "error": "Bad request",
-          "error_description": "There was a syntax error, check your params request and try it again."
-        }
-
-+ Response 401 (application/json)
-
-        {
-          "error": "unauthorized",
-          "error_description": "Full authentication is required to access this resource"
-        }
-
-### Upate the whole Price [PUT]
-
-+ Parameters
-
-    + id (required, string) ... Update a given price id
-
-+ Request
-
-      + Headers
-
-                Authorization: Bearer [OAUTH2_TOKEN]
-                Accept: application/vnd.collection+json
-
-      + Body
-
-            {
-              "id": "44",
-              "price": 23.3,
-              "price_zone_id": "454",
-              "event_id": "432",
-              "event_date": "2015-08-05",
-              "session_id": "12",
-              "session_date": "2015-08-05T08:40:51.620Z",
-              "venue_id": "2",
-              "buyer_type_code": "INTEGRATION",
-              "fee": 2.0,
-              "tax": 21.0,
-              "external_price_id": ""
-            }
-
-+ Response 200 (application/json)
-
-          {
-            "id": "44",
-            "price": 23.3,
-            "price_zone_id": "454",
-            "event_id": "432",
-            "event_date": "2015-08-05",
-            "session_id": "12",
-            "session_date": "2015-08-05T08:40:51.620Z",
-            "venue_id": "2",
-            "buyer_type_code": "INTEGRATION",
-            "fee": 2.0,
-            "tax": 21.0,
-            "external_price_id": ""
-          }
-
-+ Response 400 (application/json)
-
-          {
-            "error": "Bad request",
-            "error_description": "There was a syntax error, check your params request and try it again."
-          }
-
-+ Response 401 (application/json)
-
-          {
-            "error": "unauthorized",
-            "error_description": "Full authentication is required to access this resource"
-          }
-
-## Summaries Collection [/dynamic-pricing-api/1.0/summaries{?event_id}]
-List the summarization data from a given event.
-
-See below the description of the response fields we consider that need to be explained:
-
-| Response Field                   | Description                             |
-|----------------------------------|-----------------------------------------|
-| version                          | (Text) Version of the API               |
-| href                             | (Text) Url of the API doc               |
-| trace_id                         | (Text) unique identifier of the request |
-| parameters                       | (Object) Request filtering used         |
-
-### List All Summaries [GET]
-
-+ Request
-
-  + Headers
-
-            Authorization: Bearer [OAUTH2_TOKEN]
-            Accept: application/vnd.collection+json
-
-+ Parameters
-    + event_id (required, string) ... Filter by given event id.
-
-+ Response 200 (application/json)
-
-         {
-          "collection":
-          {
-            "version": "1.0",
-            "href": "http://www.oneboxtm.com/dynamic-pricing-api/1.0/summaries?event_id=23",
-            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
-            "request_date": "2015-08-05T08:40:51.620Z",
-            "parameters":
-            {
-              "event_id": 2
-            },
-            "summaries": [
-              {
-                "event_id": "432",
-                "event_date": "2015-08-05",
-                "event_name": "Campeonato liga LFP 15-16",
-                "session_id": "12",
-                "venue_id": "2",
-                "venue_name": "Camp Nou",
-                "total_sold_tickets": 2340,
-                "total_onsale_tickets": 3000,
-                "available_onesale_tickets": 660,
-                "prices_zones":[
+                "price_levels":[
                   {
                     "id": "454",
-                    "name": "Main grandstand low",
-                    "total_sold_tickets": 40,
-                    "total_onsale_tickets": 100,
-                    "available_onesale_tickets": 60
+                    "price": 23.3,
+                    "zone_availability_id": "432423"
+                    "available_promotions":[
+                      {
+
+                      }
+                    ]
                   },
                   {
                     "id": "455",
-                    "name": "Main grandstand high",
-                    "total_sold_tickets": 40,
-                    "total_onsale_tickets": 100,
-                    "available_onesale_tickets": 60
+                    "price": 33.3,
+                    "zone_id": "432423"
+                    "available_promotions":[
+                      {
+
+                      }
+                    ]
                   }
                 ]
               }
             ],
             "links": []
-          }
         }
 
 + Response 204 (application/json)
 
 + Response 400 (application/json)
 
-         {
+        {
           "error": "Bad request",
           "error_description": "There was a syntax error, check your params request and try it again."
-         }
+        }
 
 + Response 401 (application/json)
 
-         {
+        {
           "error": "unauthorized",
           "error_description": "Full authentication is required to access this resource"
-         }
+        }
+
+## Zone availabilities [/ticketing-api/1.0/events/{event_id}/event_dates/{event_date_id}/zone_availabilities?id]
+Retrieve a detailed zone map with the availability of each seat from that zone, venue, event and date.
+
+### List all zone availabilities [GET]
+
++ Parameters
+
+    + id (required, string) ... Update a given price id
+
++ Request
+
+      + Headers
+
+            Authorization: Bearer [OAUTH2_TOKEN]
+            Accept: application/json
+
++ Response 200 (application/json)
+
+        {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/ticketing-api/1.0/prices",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "parameters":
+            {
+              "event_id": "4345",
+              "id": "2"
+            },
+            "event_dates": [
+              {
+                "id": "44",
+                "price_levels":[
+                  {
+                    "id": "454",
+                    "price": 23.3,
+                    "zone_availability_id": "432423"
+                    "available_promotions":[
+                      {
+
+                      }
+                    ]
+                  },
+                  {
+                    "id": "455",
+                    "price": 33.3,
+                    "zone_id": "432423"
+                    "available_promotions":[
+                      {
+
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "links": []
+        }
+
++ Response 400 (application/json)
+
+        {
+          "error": "Bad request",
+          "error_description": "There was a syntax error, check your params request and try it again."
+        }
+
++ Response 401 (application/json)
+
+        {
+          "error": "unauthorized",
+          "error_description": "Full authentication is required to access this resource"
+        }
