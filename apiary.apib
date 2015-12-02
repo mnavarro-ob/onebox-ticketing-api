@@ -96,8 +96,8 @@ Collection of events and its session dates.
     + is_seats_available (optional, enum[boolean])
       Filter whether is any seat available to book or not:
         + Members
-          + `TRUE` - Filter by events with seats still available.
-          + `FALSE` - Filter by events with no seat is still available.
+          + `true` - Filter by events with seats still available.
+          + `false` - Filter by events with no seat is still available.
     + page (optional, number) ... Paginate response to point at the given page number.
     + page_size (optional, number) ... Indicate the maximum number of elements per page.
 
@@ -124,7 +124,7 @@ Collection of events and its session dates.
                   "city_id": "4087",
                   "city_name": "Barcelona",
                   "zip_code": "fdjkw34-4",
-                  "longitude": 342.30,
+                  "longitude": 34209.30,
                   "latitude": 342342.33
                 },
                 "venue_id": "2",
@@ -143,7 +143,7 @@ Collection of events and its session dates.
                           "name": "eventdates",
                           "prompt": "Event dates",
                           "rel": "eventdates",
-                          "href": "eventdates?id=12",
+                          "href": "event_dates?id=12",
                           "render": "link"
                         }
                       ]
@@ -161,7 +161,7 @@ Collection of events and its session dates.
                           "name": "eventdates",
                           "prompt": "Event dates",
                           "rel": "eventdates",
-                          "href": "eventdates?id=12",
+                          "href": "event_dates?id=12",
                           "render": "link"
                         }
                       ]
@@ -203,7 +203,7 @@ Collection of events and its session dates.
           "error_description": "Full authentication is required to access this resource"
         }
 
-## Event dates [/ticketing-api/1.0/events/{event_id}/event_dates?id&start_date&end_date&page&page_size]
+## Event dates [/ticketing-api/1.0/event_dates?id&event_id&start_date&end_date&page&page_size]
 List all the key data for each evet date (sesión in spanish) like zones, price zone levels, available promotions and availability by zone, from a given event.
 
 See below the description of the response fields we consider that need to be explained:
@@ -236,7 +236,7 @@ See below the description of the response fields we consider that need to be exp
 
         {
             "version": "1.0",
-            "href": "http://www.oneboxtm.com/ticketing-api/1.0/prices",
+            "href": "http://www.oneboxtm.com/ticketing-api/1.0/event_dates",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
             "request_date": "2015-08-05T08:40:51.620Z",
             "parameters":
@@ -251,20 +251,30 @@ See below the description of the response fields we consider that need to be exp
                   {
                     "id": "454",
                     "price": 23.3,
-                    "zone_availability_id": "432423"
-                    "available_promotions":[
+                    "price_level_id": "432423",
+                    "available_promotions":[],
+                    "links":[
                       {
-
+                        "name": "price_levels",
+                        "prompt": "Price Levels",
+                        "rel": "pricelevels",
+                        "href": "price_levels?id=432423",
+                        "render": "link"
                       }
                     ]
                   },
                   {
                     "id": "455",
                     "price": 33.3,
-                    "zone_id": "432423"
-                    "available_promotions":[
+                    "price_level_id": "432424",
+                    "available_promotions":[],
+                    "links":[
                       {
-
+                        "name": "price_levels",
+                        "prompt": "Price Levels",
+                        "rel": "pricelevels",
+                        "href": "price_levels?id=432424",
+                        "render": "link"
                       }
                     ]
                   }
@@ -290,13 +300,15 @@ See below the description of the response fields we consider that need to be exp
           "error_description": "Full authentication is required to access this resource"
         }
 
-## Zone availabilities [/ticketing-api/1.0/events/{event_id}/event_dates/{event_date_id}/zone_availabilities?id]
+## Price levels [/ticketing-api/1.0/price_levels?id&event_id&event_date_id]
 Retrieve a detailed zone map with the availability of each seat from that zone, venue, event and date.
 
-### List all zone availabilities [GET]
+### List all price levels [GET]
 
 + Parameters
 
+    + event_id (required, string) ... Filter by the given event id.
+    + event_date_id (required, string) ... Filter by the given event date id.
     + id (required, string) ... Update a given price id
 
 + Request
@@ -310,39 +322,106 @@ Retrieve a detailed zone map with the availability of each seat from that zone, 
 
         {
             "version": "1.0",
-            "href": "http://www.oneboxtm.com/ticketing-api/1.0/prices",
+            "href": "http://www.oneboxtm.com/ticketing-api/1.0/price_levels",
             "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
             "request_date": "2015-08-05T08:40:51.620Z",
             "parameters":
             {
               "event_id": "4345",
-              "id": "2"
+              "event_date_id": "2"
             },
-            "event_dates": [
+            "price_levels":[
               {
-                "id": "44",
-                "price_levels":[
+                "id": "454",
+                "name": "Tribuna alta",
+                "price": 23.3,
+                "seats_available": 23,
+                "links":[
                   {
-                    "id": "454",
-                    "price": 23.3,
-                    "zone_availability_id": "432423"
-                    "available_promotions":[
-                      {
-
-                      }
-                    ]
-                  },
-                  {
-                    "id": "455",
-                    "price": 33.3,
-                    "zone_id": "432423"
-                    "available_promotions":[
-                      {
-
-                      }
-                    ]
+                    "name": "seats",
+                    "prompt": "Seats availability",
+                    "rel": "seats",
+                    "href": "/price_levels/454/seats",
+                    "render": "link"
                   }
                 ]
+              },
+              {
+                "id": "455",
+                "name": "Tribuna baja",
+                "price": 15.40,
+                "seats_available": 2,
+                "links":[
+                  {
+                    "name": "seats",
+                    "prompt": "Seats availability",
+                    "rel": "seats",
+                    "href": "/price_levels/455/seats",
+                    "render": "link"
+                  }
+                ]
+              }
+            ],
+            "links": []
+        }
+
++ Response 400 (application/json)
+
+        {
+          "error": "Bad request",
+          "error_description": "There was a syntax error, check your params request and try it again."
+        }
+
++ Response 401 (application/json)
+
+        {
+          "error": "unauthorized",
+          "error_description": "Full authentication is required to access this resource"
+        }
+
+## Seating availability [/ticketing-api/1.0/seats?event_id&event_date_id&price_level_id]
+Retrieve a detailed seating availability for the given price level zone.
+
+### List all seating availability [GET]
+
++ Parameters
+
+  + event_id (required, string) ... Filter by the given event id.
+  + event_date_id (required, string) ... Filter by the given event date id.
+  + price_level_id (required, string) ... Filter by the given price level id.
+
++ Request
+
+      + Headers
+
+            Authorization: Bearer [OAUTH2_TOKEN]
+            Accept: application/json
+
++ Response 200 (application/json)
+
+        {
+            "version": "1.0",
+            "href": "http://www.oneboxtm.com/ticketing-api/1.0/seats",
+            "trace_id": "94abc26e-173a-4ab2-a71b-863aed20f656",
+            "request_date": "2015-08-05T08:40:51.620Z",
+            "parameters":
+            {
+              "event_id": "4345",
+              "event_date_id": "2",
+              "price_level_id": "r434"
+            },
+            "seats":[
+              {
+                "id": "454",
+                "row": 20,
+                "seat": 3,
+                "is_available": true
+              },
+              {
+                "id": "455",
+                "row": 20,
+                "seat": 4,
+                "is_available": false
               }
             ],
             "links": []
