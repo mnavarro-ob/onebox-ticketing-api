@@ -3,7 +3,7 @@ HOST: http://onebox-api-url/1.0/ticketing-api
 
 # onebox-ticketing-api
 
-## API for searching and purchasing ticket events.
+## Ticketing API
 + Search for events, sessions, venue price zones and its availability
 + Provide a complete shopping cart management capabilities
 + Book tickets in two simple steps:
@@ -14,7 +14,7 @@ HOST: http://onebox-api-url/1.0/ticketing-api
 
 To do so, we have used a **API Blueprint** standard, **apiary** as an online editing and mocking tool, **aglio** to document it and **getsandbox** as a sandbox provider:
 + [API Blueprint](https://apiblueprint.org/)
-+ [apiary.io](http://docs.oneboxdynamicpricingapi.apiary.io/)
++ [apiary.io](http://docs.oneboxticketingapi.apiary.io/)
 + [getsandbox.com](http://onebox-ticketing-api.getsandbox.com/)
 + [aglio](https://github.com/danielgtaylor/aglio)
 + [github](https://github.com/joliva-ob/onebox-ticketing-api)
@@ -523,10 +523,19 @@ This will create a new order resource, the user are entitled to set the number o
             "seats_number": 2,
             "seats":[
               {
-                "id": "454"
+                "id": "454",
+                "buyer":{
+                  "personal_id": "455444300E",
+                  "partner_id": "3453",
+                  "partner_pass": "1234"
+                }
               },
               {
-                "id": "455"
+                "id": "455",
+                "buyer":{
+                  "personal_id": "455444300E",
+                  "partner_id": "3453",
+                  "partner_pass": "1234"
               }
             ],
             "status": "PREORDER"
@@ -541,6 +550,7 @@ This will create a new order resource, the user are entitled to set the number o
             "event_id": "4345",
             "event_date_id": "2",
             "price_level_id": "r434",
+            "remaining_release_seats_time": 125,
             "seats_number": 2,
             "seats": [
                 {
@@ -552,7 +562,12 @@ This will create a new order resource, the user are entitled to set the number o
                   "entrance": "",
                   "gate": "1",
                   "block": "1",
-                  "sector": ""
+                  "sector": "",
+                  "buyer":{
+                    "personal_id": "455444300E",
+                    "partner_id": "3453",
+                    "partner_pass": "1234"
+                  }
                 },
                 {
                   "id": "127",
@@ -563,7 +578,12 @@ This will create a new order resource, the user are entitled to set the number o
                   "entrance": "",
                   "gate": "1",
                   "block": "1",
-                  "sector": ""
+                  "sector": "",
+                  "buyer":{
+                    "personal_id": "455444300E",
+                    "partner_id": "3453",
+                    "partner_pass": "1234"
+                  }
                 }
             ],
             "client_details":{
@@ -609,6 +629,7 @@ This will create or update an order resource, the user are entitled to set the n
             "event_id": "4345",
             "event_date_id": "2",
             "price_level_id": "r434",
+            "remaining_release_seats_time": 125,
             "seats_number": 2,
             "seats": [
                 {
@@ -620,7 +641,12 @@ This will create or update an order resource, the user are entitled to set the n
                   "entrance": "",
                   "gate": "1",
                   "block": "1",
-                  "sector": ""
+                  "sector": "",
+                  "buyer":{
+                    "personal_id": "455444300E",
+                    "partner_id": "3453",
+                    "partner_pass": "1234"
+                  }
                 },
                 {
                   "id": "127",
@@ -631,7 +657,12 @@ This will create or update an order resource, the user are entitled to set the n
                   "entrance": "",
                   "gate": "1",
                   "block": "1",
-                  "sector": ""
+                  "sector": "",
+                  "buyer":{
+                    "personal_id": "455444300E",
+                    "partner_id": "3453",
+                    "partner_pass": "1234"
+                  }
                 }
             ],
             "client_details":{
@@ -652,6 +683,7 @@ This will create or update an order resource, the user are entitled to set the n
             "event_id": "4345",
             "event_date_id": "2",
             "price_level_id": "r434",
+            "remaining_release_seats_time": 125,
             "seats_number": 2,
             "seats": [
                 {
@@ -663,7 +695,12 @@ This will create or update an order resource, the user are entitled to set the n
                   "entrance": "",
                   "gate": "1",
                   "block": "1",
-                  "sector": ""
+                  "sector": "",
+                  "buyer":{
+                    "personal_id": "455444300E",
+                    "partner_id": "3453",
+                    "partner_pass": "1234"
+                  }
                 },
                 {
                   "id": "127",
@@ -674,7 +711,12 @@ This will create or update an order resource, the user are entitled to set the n
                   "entrance": "",
                   "gate": "1",
                   "block": "1",
-                  "sector": ""
+                  "sector": "",
+                  "buyer":{
+                    "personal_id": "455444300E",
+                    "partner_id": "3453",
+                    "partner_pass": "1234"
+                  }
                 }
             ],
             "client_details":{
@@ -720,6 +762,7 @@ This will partially update an order resource, the user are entitled to set the n
             "event_id": "4345",
             "event_date_id": "2",
             "price_level_id": "r434",
+            "remaining_release_seats_time": 125,
             "seats_number": 2,
             "seats": [
                 {
@@ -731,7 +774,12 @@ This will partially update an order resource, the user are entitled to set the n
                   "entrance": "",
                   "gate": "1",
                   "block": "1",
-                  "sector": ""
+                  "sector": "",
+                  "buyer":{
+                    "personal_id": "455444300E",
+                    "partner_id": "3453",
+                    "partner_pass": "1234"
+                  }
                 },
                 {
                   "id": "127",
@@ -742,7 +790,12 @@ This will partially update an order resource, the user are entitled to set the n
                   "entrance": "",
                   "gate": "1",
                   "block": "1",
-                  "sector": ""
+                  "sector": "",
+                  "buyer":{
+                    "personal_id": "455444300E",
+                    "partner_id": "3453",
+                    "partner_pass": "1234"
+                  }
                 }
             ],
             "client_details":{
@@ -763,6 +816,7 @@ This will partially update an order resource, the user are entitled to set the n
             "event_id": "4345",
             "event_date_id": "2",
             "price_level_id": "r434",
+            "remaining_release_seats_time": 125,
             "seats_number": 2,
             "seats": [
                 {
@@ -774,7 +828,12 @@ This will partially update an order resource, the user are entitled to set the n
                   "entrance": "",
                   "gate": "1",
                   "block": "1",
-                  "sector": ""
+                  "sector": "",
+                  "buyer":{
+                    "personal_id": "455444300E",
+                    "partner_id": "3453",
+                    "partner_pass": "1234"
+                  }
                 },
                 {
                   "id": "127",
@@ -785,7 +844,12 @@ This will partially update an order resource, the user are entitled to set the n
                   "entrance": "",
                   "gate": "1",
                   "block": "1",
-                  "sector": ""
+                  "sector": "",
+                  "buyer":{
+                    "personal_id": "455444300E",
+                    "partner_id": "3453",
+                    "partner_pass": "1234"
+                  }
                 }
             ],
             "client_details":{
