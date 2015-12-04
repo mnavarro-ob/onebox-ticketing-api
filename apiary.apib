@@ -27,7 +27,7 @@ To do so, we have used a **API Blueprint** standard, **apiary** as an online edi
 You will need to use OAuth to access the API.  Write to us at api-support@oneboxtm.com.  We will give you a client ID and client secret. Use this as shown in the following call in order to retrieve a token.
 Once you have a token you can use it in all API calls as shown below.
 
-+ Request (application/json)
++ Request  (application/json)
 
         {
           "grant_type": "password",
@@ -37,7 +37,7 @@ Once you have a token you can use it in all API calls as shown below.
           "username": [YOURUSERNAME]
         }
 
-+ Response 201
++ Response 201 (application/json)
 
         {
           "access_token": "[OAUTH2_TOKEN]",
@@ -461,7 +461,7 @@ Retrieve the static data needed for mapping and quering purposes. You will be ab
             Authorization: Bearer [OAUTH2_TOKEN]
             Accept: application/vnd.collection+json
 
-+ Response 200 (application/json)
++ Response 200 (application/vnd.collection+json)
 
         {
           "collection":{
@@ -489,6 +489,197 @@ Retrieve the static data needed for mapping and quering purposes. You will be ab
               ],
               "links": []
           }
+        }
+
++ Response 400 (application/vnd.collection+json)
+
+        {
+          "error": "Bad request",
+          "error_description": "There was a syntax error, check your params request and try it again."
+        }
+
++ Response 401 (application/vnd.collection+json)
+
+        {
+          "error": "unauthorized",
+          "error_description": "Full authentication is required to access this resource"
+        }
+
+## Orders collection [/orders]
+
+### Create a new order [POST]
+
+This will create a new order resource, the user are entitled to set the number of wished seats by a given price_zone, to set detailed allocation if venue configuration allow you, to set the buyer personal details and delivery method. And overall, a client will be able to perform it directly (direct confirm) or in two steps (first lock the seats -default- getting a temporal token, then confirm the seats if already paid receving the final locator). Possible statues available are:
+      + `INITIATE` - Null value to set up an empty order
+      + `PREORDER` - Lock tickets for a while
+      + `PAID` - Mark tickets as paid and confirmed
+
++ Request  (application/json)
+
+        {
+            "event_id": "4345",
+            "event_date_id": "2",
+            "price_level_id": "r434",
+            "seats_number": 2,
+            "seats":[
+              {
+                "id": "454"
+              },
+              {
+                "id": "455"
+              }
+            ],
+            "status": "PREORDER"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": "4322",
+            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
+            "locator": null,
+            "event_id": "4345",
+            "event_date_id": "2",
+            "price_level_id": "r434",
+            "seats_number": 2,
+            "seats": [
+                {
+                  "id": "126",
+                  "row": 20,
+                  "row_name": "20"
+                  "seat": 3,
+                  "seat_name": "3A",
+                  "entrance": "",
+                  "gate": "1",
+                  "block": "1",
+                  "sector": ""
+                },
+                {
+                  "id": "127",
+                  "row": 20,
+                  "row_name": "20"
+                  "seat": 4,
+                  "seat_name": "3A",
+                  "entrance": "",
+                  "gate": "1",
+                  "block": "1",
+                  "sector": ""
+                }
+            ],
+            "client_details":{
+
+            },
+            "delivery_method":{
+
+            }
+            "status": "PREORDER"
+        }
+
++ Response 400 (application/json)
+
+        {
+          "error": "Bad request",
+          "error_description": "There was a syntax error, check your params request and try it again."
+        }
+
++ Response 401 (application/json)
+
+        {
+          "error": "unauthorized",
+          "error_description": "Full authentication is required to access this resource"
+        }
+
+### Update o create an order [PUT]
+
+This will create or update an order resource, the user are entitled to set the number of wished seats by a given price_zone, to set detailed allocation if venue configuration allow you, to set the buyer personal details and delivery method. And overall, a client will be able to perform it directly (direct confirm) or in two steps (first lock the seats -default- getting a temporal token, then confirm the seats if already paid receving the final locator). Possible statues available are:
+      + `INITIATE` - Null value to set up an empty order
+      + `PREORDER` - Lock tickets for a while
+      + `PAID` - Mark tickets as paid and confirmed
+
++ Request  (application/json)
+
+        {
+            "id": "4322",
+            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
+            "locator": null,
+            "event_id": "4345",
+            "event_date_id": "2",
+            "price_level_id": "r434",
+            "seats_number": 2,
+            "seats": [
+                {
+                  "id": "126",
+                  "row": 20,
+                  "row_name": "20"
+                  "seat": 3,
+                  "seat_name": "3A",
+                  "entrance": "",
+                  "gate": "1",
+                  "block": "1",
+                  "sector": ""
+                },
+                {
+                  "id": "127",
+                  "row": 20,
+                  "row_name": "20"
+                  "seat": 4,
+                  "seat_name": "3A",
+                  "entrance": "",
+                  "gate": "1",
+                  "block": "1",
+                  "sector": ""
+                }
+            ],
+            "client_details":{
+
+            },
+            "delivery_method":{
+
+            }
+            "status": "PAID"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "4322",
+            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
+            "locator": "FHDJ43924",
+            "event_id": "4345",
+            "event_date_id": "2",
+            "price_level_id": "r434",
+            "seats_number": 2,
+            "seats": [
+                {
+                  "id": "126",
+                  "row": 20,
+                  "row_name": "20"
+                  "seat": 3,
+                  "seat_name": "3A",
+                  "entrance": "",
+                  "gate": "1",
+                  "block": "1",
+                  "sector": ""
+                },
+                {
+                  "id": "127",
+                  "row": 20,
+                  "row_name": "20"
+                  "seat": 4,
+                  "seat_name": "3A",
+                  "entrance": "",
+                  "gate": "1",
+                  "block": "1",
+                  "sector": ""
+                }
+            ],
+            "client_details":{
+
+            },
+            "delivery_method":{
+
+            }
+            "status": "PAID"
         }
 
 + Response 400 (application/json)
