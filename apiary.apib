@@ -3,7 +3,7 @@ HOST: http://developer.oneboxtickets.com/ticketing-api
 
 # onebox-ticketing-api
 
-## API to let an onsale channel to:
+## API for searching and purchasing ticket events.
 + Search for events, sessions, venue price zones and its availability
 + Provide a complete shopping cart management capabilities
 + Book tickets in two simple steps:
@@ -505,7 +505,7 @@ Retrieve the static data needed for mapping and quering purposes. You will be ab
           "error_description": "Full authentication is required to access this resource"
         }
 
-## Orders collection [/orders]
+## Orders collection [/orders/{id}]
 
 ### Create a new order [POST]
 
@@ -546,7 +546,7 @@ This will create a new order resource, the user are entitled to set the number o
                 {
                   "id": "126",
                   "row": 20,
-                  "row_name": "20"
+                  "row_name": "20",
                   "seat": 3,
                   "seat_name": "3A",
                   "entrance": "",
@@ -557,7 +557,7 @@ This will create a new order resource, the user are entitled to set the number o
                 {
                   "id": "127",
                   "row": 20,
-                  "row_name": "20"
+                  "row_name": "20",
                   "seat": 4,
                   "seat_name": "3A",
                   "entrance": "",
@@ -596,6 +596,10 @@ This will create or update an order resource, the user are entitled to set the n
       + `PREORDER` - Lock tickets for a while
       + `PAID` - Mark tickets as paid and confirmed
 
++ Parameters
+
+    + id (required, string) ... Update the whole order id
+
 + Request  (application/json)
 
         {
@@ -610,7 +614,7 @@ This will create or update an order resource, the user are entitled to set the n
                 {
                   "id": "126",
                   "row": 20,
-                  "row_name": "20"
+                  "row_name": "20",
                   "seat": 3,
                   "seat_name": "3A",
                   "entrance": "",
@@ -621,7 +625,7 @@ This will create or update an order resource, the user are entitled to set the n
                 {
                   "id": "127",
                   "row": 20,
-                  "row_name": "20"
+                  "row_name": "20",
                   "seat": 4,
                   "seat_name": "3A",
                   "entrance": "",
@@ -653,7 +657,7 @@ This will create or update an order resource, the user are entitled to set the n
                 {
                   "id": "126",
                   "row": 20,
-                  "row_name": "20"
+                  "row_name": "20",
                   "seat": 3,
                   "seat_name": "3A",
                   "entrance": "",
@@ -664,7 +668,118 @@ This will create or update an order resource, the user are entitled to set the n
                 {
                   "id": "127",
                   "row": 20,
-                  "row_name": "20"
+                  "row_name": "20",
+                  "seat": 4,
+                  "seat_name": "3A",
+                  "entrance": "",
+                  "gate": "1",
+                  "block": "1",
+                  "sector": ""
+                }
+            ],
+            "client_details":{
+
+            },
+            "delivery_method":{
+
+            }
+            "status": "PAID"
+        }
+
++ Response 400 (application/json)
+
+        {
+          "error": "Bad request",
+          "error_description": "There was a syntax error, check your params request and try it again."
+        }
+
++ Response 401 (application/json)
+
+        {
+          "error": "unauthorized",
+          "error_description": "Full authentication is required to access this resource"
+        }
+
+### Partial update of an order [PATCH]
+
+This will partially update an order resource, the user are entitled to set the number of wished seats by a given price_zone, to set detailed allocation if venue configuration allow you, to set the buyer personal details and delivery method. And overall, a client will be able to perform it directly (direct confirm) or in two steps (first lock the seats -default- getting a temporal token, then confirm the seats if already paid receving the final locator). Possible statues available are:
+      + `INITIATE` - Null value to set up an empty order
+      + `PREORDER` - Lock tickets for a while
+      + `PAID` - Mark tickets as paid and confirmed
+
++ Parameters
+
+    + id (required, string) ... Update the whole order id
+
++ Request  (application/json)
+
+        {
+            "id": "4322",
+            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
+            "locator": null,
+            "event_id": "4345",
+            "event_date_id": "2",
+            "price_level_id": "r434",
+            "seats_number": 2,
+            "seats": [
+                {
+                  "id": "126",
+                  "row": 20,
+                  "row_name": "20",
+                  "seat": 3,
+                  "seat_name": "3A",
+                  "entrance": "",
+                  "gate": "1",
+                  "block": "1",
+                  "sector": ""
+                },
+                {
+                  "id": "127",
+                  "row": 20,
+                  "row_name": "20",
+                  "seat": 4,
+                  "seat_name": "3A",
+                  "entrance": "",
+                  "gate": "1",
+                  "block": "1",
+                  "sector": ""
+                }
+            ],
+            "client_details":{
+
+            },
+            "delivery_method":{
+
+            }
+            "status": "PAID"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": "4322",
+            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
+            "locator": "FHDJ43924",
+            "event_id": "4345",
+            "event_date_id": "2",
+            "price_level_id": "r434",
+            "seats_number": 2,
+            "seats": [
+                {
+                  "id": "126",
+                  "row": 20,
+                  "row_name": "20",
+                  "seat": 3,
+                  "seat_name": "3A",
+                  "entrance": "",
+                  "gate": "1",
+                  "block": "1",
+                  "sector": ""
+                },
+                {
+                  "id": "127",
+                  "row": 20,
+                  "row_name": "20",
                   "seat": 4,
                   "seat_name": "3A",
                   "entrance": "",
