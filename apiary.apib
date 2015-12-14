@@ -514,52 +514,20 @@ If the allocation (seat.id) is not known, the system will automatically allocate
 + Request  (application/json)
 
         {
-            "event_id": "4345",
-            "event_date_id": "2",
-            "price_level_id": "r434",
-            "seats_number": 2,
-            "seats":[
-              {
-                "id": "454",
-                "buyer":{
-                  "personal_id": "455444300E",
-                  "partner_id": "3453",
-                  "partner_pass": "1234"
-                }
-              },
-              {
-                "id": "455",
-                "buyer":{
-                  "personal_id": "455444300E",
-                  "partner_id": "3453",
-                  "partner_pass": "1234"
-              }
-            ],
-            "status": "PREORDER"
-        }
-
-+ Response 201 (application/json)
-
-        {
-            "id": "4322",
-            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
-            "locator": null,
-            "event_id": "4345",
-            "event_date_id": "2",
-            "price_level_id": "r434",
-            "remaining_release_seats_time": 125,
-            "seats_number": 2,
-            "seats": [
+          "events":[
+            {
+              "id": "4345",
+              "event_date_id": "2",
+              "price_levels":[
                 {
-                  "id": "126",
-                  "row": 20,
-                  "row_name": "20",
-                  "seat": 3,
-                  "seat_name": "3A",
-                  "entrance": "",
-                  "gate": "1",
-                  "block": "1",
-                  "sector": "",
+                  "id": "434",
+                  "seats_number": 2
+                }
+              ],
+              "seats":[
+                {
+                  "id": "454",
+                  "price_level_id": "4345",
                   "buyer":{
                     "personal_id": "455444300E",
                     "partner_id": "3453",
@@ -567,21 +535,74 @@ If the allocation (seat.id) is not known, the system will automatically allocate
                   }
                 },
                 {
-                  "id": "127",
-                  "row": 20,
-                  "row_name": "20",
-                  "seat": 4,
-                  "seat_name": "3A",
-                  "entrance": "",
-                  "gate": "1",
-                  "block": "1",
-                  "sector": "",
+                  "id": "455",
+                  "price_level_id": "4345",
                   "buyer":{
                     "personal_id": "455444300E",
                     "partner_id": "3453",
                     "partner_pass": "1234"
-                  }
                 }
+              ]
+            }
+          ],
+          "status": "PREORDER"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "id": "4322",
+            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
+            "events":[
+              {
+                "id": "4345",
+                "event_date_id": "2",
+                "price_levels":[
+                  {
+                    "id": "434",
+                    "seats_number": 2
+                  }
+                ],
+                "remaining_release_seats_time": 125,
+                "seats": [
+                    {
+                      "id": "126",
+                      "price_level_id": "4345",
+                      "supplier_id": "avet-fcb",
+                      "row": 20,
+                      "row_name": "20",
+                      "seat": 3,
+                      "seat_name": "3A",
+                      "entrance": "",
+                      "gate": "1",
+                      "block": "1",
+                      "sector": "",
+                      "buyer":{
+                        "personal_id": "455444300E",
+                        "partner_id": "3453",
+                        "partner_pass": "1234"
+                      }
+                    },
+                    {
+                      "id": "127",
+                      "price_level_id": "4345",
+                      "supplier_id": "avet-fcb",
+                      "row": 20,
+                      "row_name": "20",
+                      "seat": 4,
+                      "seat_name": "3A",
+                      "entrance": "",
+                      "gate": "1",
+                      "block": "1",
+                      "sector": "",
+                      "buyer":{
+                        "personal_id": "455444300E",
+                        "partner_id": "3453",
+                        "partner_pass": "1234"
+                      }
+                    }
+                ]
+              }
             ],
             "client_details":{
 
@@ -622,45 +643,56 @@ This will create or update an order resource, the user are entitled to set the n
         {
             "id": "4322",
             "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
-            "locator": null,
-            "event_id": "4345",
-            "event_date_id": "2",
-            "price_level_id": "r434",
-            "remaining_release_seats_time": 125,
-            "seats_number": 2,
-            "seats": [
-                {
-                  "id": "126",
-                  "row": 20,
-                  "row_name": "20",
-                  "seat": 3,
-                  "seat_name": "3A",
-                  "entrance": "",
-                  "gate": "1",
-                  "block": "1",
-                  "sector": "",
-                  "buyer":{
-                    "personal_id": "455444300E",
-                    "partner_id": "3453",
-                    "partner_pass": "1234"
+            "events:"[
+              {
+                "id": "4345",
+                "event_date_id": "2",
+                "price_levels":[
+                  {
+                    "id": "434",
+                    "seats_number": 2
                   }
-                },
-                {
-                  "id": "127",
-                  "row": 20,
-                  "row_name": "20",
-                  "seat": 4,
-                  "seat_name": "3A",
-                  "entrance": "",
-                  "gate": "1",
-                  "block": "1",
-                  "sector": "",
-                  "buyer":{
-                    "personal_id": "455444300E",
-                    "partner_id": "3453",
-                    "partner_pass": "1234"
-                  }
-                }
+                ],
+                "remaining_release_seats_time": 125,
+                "seats": [
+                    {
+                      "id": "126",
+                      "price_level_id": "4345",
+                      "supplier_id": "avet-fcb",
+                      "row": 20,
+                      "row_name": "20",
+                      "seat": 3,
+                      "seat_name": "3A",
+                      "entrance": "",
+                      "gate": "1",
+                      "block": "1",
+                      "sector": "",
+                      "buyer":{
+                        "personal_id": "455444300E",
+                        "partner_id": "3453",
+                        "partner_pass": "1234"
+                      }
+                    },
+                    {
+                      "id": "127",
+                      "price_level_id": "4345",
+                      "supplier_id": "avet-fcb",
+                      "row": 20,
+                      "row_name": "20",
+                      "seat": 4,
+                      "seat_name": "3A",
+                      "entrance": "",
+                      "gate": "1",
+                      "block": "1",
+                      "sector": "",
+                      "buyer":{
+                        "personal_id": "455444300E",
+                        "partner_id": "3453",
+                        "partner_pass": "1234"
+                      }
+                    }
+                ]
+              }
             ],
             "client_details":{
 
@@ -676,45 +708,56 @@ This will create or update an order resource, the user are entitled to set the n
         {
             "id": "4322",
             "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
-            "locator": "FHDJ43924",
-            "event_id": "4345",
-            "event_date_id": "2",
-            "price_level_id": "r434",
-            "remaining_release_seats_time": 125,
-            "seats_number": 2,
-            "seats": [
-                {
-                  "id": "126",
-                  "row": 20,
-                  "row_name": "20",
-                  "seat": 3,
-                  "seat_name": "3A",
-                  "entrance": "",
-                  "gate": "1",
-                  "block": "1",
-                  "sector": "",
-                  "buyer":{
-                    "personal_id": "455444300E",
-                    "partner_id": "3453",
-                    "partner_pass": "1234"
+            "events":[
+              {
+                "id": "4345",
+                "event_date_id": "2",
+                "price_levels":[
+                  {
+                    "id": "434",
+                    "seats_number": 2
                   }
-                },
-                {
-                  "id": "127",
-                  "row": 20,
-                  "row_name": "20",
-                  "seat": 4,
-                  "seat_name": "3A",
-                  "entrance": "",
-                  "gate": "1",
-                  "block": "1",
-                  "sector": "",
-                  "buyer":{
-                    "personal_id": "455444300E",
-                    "partner_id": "3453",
-                    "partner_pass": "1234"
-                  }
-                }
+                ],
+                "remaining_release_seats_time": 125,
+                "seats": [
+                    {
+                      "id": "126",
+                      "price_level_id": "4345",
+                      "supplier_id": "avet-fcb",
+                      "row": 20,
+                      "row_name": "20",
+                      "seat": 3,
+                      "seat_name": "3A",
+                      "entrance": "",
+                      "gate": "1",
+                      "block": "1",
+                      "sector": "",
+                      "buyer":{
+                        "personal_id": "455444300E",
+                        "partner_id": "3453",
+                        "partner_pass": "1234"
+                      }
+                    },
+                    {
+                      "id": "127",
+                      "price_level_id": "4345",
+                      "supplier_id": "avet-fcb",
+                      "row": 20,
+                      "row_name": "20",
+                      "seat": 4,
+                      "seat_name": "3A",
+                      "entrance": "",
+                      "gate": "1",
+                      "block": "1",
+                      "sector": "",
+                      "buyer":{
+                        "personal_id": "455444300E",
+                        "partner_id": "3453",
+                        "partner_pass": "1234"
+                      }
+                    }
+                ]
+              }
             ],
             "client_details":{
 
@@ -755,45 +798,56 @@ This will partially update an order resource, the user are entitled to set the n
         {
             "id": "4322",
             "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
-            "locator": null,
-            "event_id": "4345",
-            "event_date_id": "2",
-            "price_level_id": "r434",
-            "remaining_release_seats_time": 125,
-            "seats_number": 2,
-            "seats": [
-                {
-                  "id": "126",
-                  "row": 20,
-                  "row_name": "20",
-                  "seat": 3,
-                  "seat_name": "3A",
-                  "entrance": "",
-                  "gate": "1",
-                  "block": "1",
-                  "sector": "",
-                  "buyer":{
-                    "personal_id": "455444300E",
-                    "partner_id": "3453",
-                    "partner_pass": "1234"
+            "events":[
+              {
+                "id": "4345",
+                "event_date_id": "2",
+                "price_levels":[
+                  {
+                    "id": "434",
+                    "seats_number": 2
                   }
-                },
-                {
-                  "id": "127",
-                  "row": 20,
-                  "row_name": "20",
-                  "seat": 4,
-                  "seat_name": "3A",
-                  "entrance": "",
-                  "gate": "1",
-                  "block": "1",
-                  "sector": "",
-                  "buyer":{
-                    "personal_id": "455444300E",
-                    "partner_id": "3453",
-                    "partner_pass": "1234"
-                  }
-                }
+                ],
+                "remaining_release_seats_time": 125,
+                "seats": [
+                    {
+                      "id": "126",
+                      "price_level_id": "4345",
+                      "supplier_id": "avet-fcb",
+                      "row": 20,
+                      "row_name": "20",
+                      "seat": 3,
+                      "seat_name": "3A",
+                      "entrance": "",
+                      "gate": "1",
+                      "block": "1",
+                      "sector": "",
+                      "buyer":{
+                        "personal_id": "455444300E",
+                        "partner_id": "3453",
+                        "partner_pass": "1234"
+                      }
+                    },
+                    {
+                      "id": "127",
+                      "price_level_id": "4345",
+                      "supplier_id": "avet-fcb",
+                      "row": 20,
+                      "row_name": "20",
+                      "seat": 4,
+                      "seat_name": "3A",
+                      "entrance": "",
+                      "gate": "1",
+                      "block": "1",
+                      "sector": "",
+                      "buyer":{
+                        "personal_id": "455444300E",
+                        "partner_id": "3453",
+                        "partner_pass": "1234"
+                      }
+                    }
+                ]
+              }
             ],
             "client_details":{
 
@@ -809,45 +863,56 @@ This will partially update an order resource, the user are entitled to set the n
         {
             "id": "4322",
             "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
-            "locator": "FHDJ43924",
-            "event_id": "4345",
-            "event_date_id": "2",
-            "price_level_id": "r434",
-            "remaining_release_seats_time": 125,
-            "seats_number": 2,
-            "seats": [
-                {
-                  "id": "126",
-                  "row": 20,
-                  "row_name": "20",
-                  "seat": 3,
-                  "seat_name": "3A",
-                  "entrance": "",
-                  "gate": "1",
-                  "block": "1",
-                  "sector": "",
-                  "buyer":{
-                    "personal_id": "455444300E",
-                    "partner_id": "3453",
-                    "partner_pass": "1234"
+            "events":[
+              {
+                "id": "4345",
+                "event_date_id": "2",
+                "price_levels":[
+                  {
+                    "id": "434",
+                    "seats_number": 2
                   }
-                },
-                {
-                  "id": "127",
-                  "row": 20,
-                  "row_name": "20",
-                  "seat": 4,
-                  "seat_name": "3A",
-                  "entrance": "",
-                  "gate": "1",
-                  "block": "1",
-                  "sector": "",
-                  "buyer":{
-                    "personal_id": "455444300E",
-                    "partner_id": "3453",
-                    "partner_pass": "1234"
-                  }
-                }
+                ],
+                "remaining_release_seats_time": 125,
+                "seats": [
+                    {
+                      "id": "126",
+                      "price_level_id": "4345",
+                      "supplier_id": "avet-fcb",
+                      "row": 20,
+                      "row_name": "20",
+                      "seat": 3,
+                      "seat_name": "3A",
+                      "entrance": "",
+                      "gate": "1",
+                      "block": "1",
+                      "sector": "",
+                      "buyer":{
+                        "personal_id": "455444300E",
+                        "partner_id": "3453",
+                        "partner_pass": "1234"
+                      }
+                    },
+                    {
+                      "id": "127",
+                      "price_level_id": "4345",
+                      "supplier_id": "avet-fcb",
+                      "row": 20,
+                      "row_name": "20",
+                      "seat": 4,
+                      "seat_name": "3A",
+                      "entrance": "",
+                      "gate": "1",
+                      "block": "1",
+                      "sector": "",
+                      "buyer":{
+                        "personal_id": "455444300E",
+                        "partner_id": "3453",
+                        "partner_pass": "1234"
+                      }
+                    }
+                ]
+              }
             ],
             "client_details":{
 
