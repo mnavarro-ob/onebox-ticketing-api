@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>onebox-ticketing-api</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}body{color:black;background:white;font-family:'Roboto',Helvetica,sans-serif;font-size:14px;line-height:1.42}header{border-bottom:1px solid #f2f2f2;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:6px;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}h1{font-family:'Raleway',Helvetica,sans-serif;font-size:36px;font-weight:500}h2{font-family:'Raleway',Helvetica,sans-serif;font-size:30px;font-weight:500}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#428bca;text-decoration:none}li p{margin:0}dl dt{float:left;width:160px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:180px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font-family:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #d9d9d9}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#f0f6fb;border-left:4px solid #428bca}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#428bca}.warning{color:black;background-color:#fbf1f0;border-left:4px solid #c9302c}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#c9302c}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #d9d9d9;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#f2f2f2;border-radius:10px;margin-top:-2px;margin-bottom:-2px}.badge.get{color:#70bbe1;background-color:#d9edf7}.badge.head{color:#70bbe1;background-color:#d9edf7}.badge.options{color:#70bbe1;background-color:#d9edf7}.badge.put{color:#f0db70;background-color:#fcf8e3}.badge.patch{color:#f0db70;background-color:#fcf8e3}.badge.post{color:#93cd7c;background-color:#dff0d8}.badge.delete{color:#ce8383;background-color:#f2dede}.collapse-button{float:right}.collapse-button .close{display:none;color:#428bca;cursor:pointer}.collapse-button .open{color:#428bca;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%;width:76%}@media (max-width:1200px){nav{width:200px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:170px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content{margin-left:auto;margin-right:auto;width:95%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#f2f2f2;text-decoration:none !important;border-top:1px solid #d9d9d9;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #d9d9d9;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#f2f2f2;border-bottom:1px solid #d9d9d9;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}nav .resource-group .heading a{margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px}.action h4.action-heading .method.get{color:#fff;background-color:#337ab7}.action h4.action-heading .method.head{color:#fff;background-color:#337ab7}.action h4.action-heading .method.options{color:#fff;background-color:#337ab7}.action h4.action-heading .method.put{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.patch{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.post{color:#fff;background-color:#5cb85c}.action h4.action-heading .method.delete{color:#fff;background-color:#d9534f}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#bce8f1}.action.get h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.head{border-color:#bce8f1}.action.head h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.options{border-color:#bce8f1}.action.options h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.post{border-color:#d6e9c6}.action.post h4.action-heading{color:#5cb85c;background:#dff0d8;border-bottom-color:#d6e9c6}.action.put{border-color:#faebcc}.action.put h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.patch{border-color:#faebcc}.action.patch h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.delete{border-color:#ebccd1}.action.delete h4.action-heading{color:#d9534f;background:#f2dede;border-bottom-color:#ebccd1}</style></head><body class="preload"><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#top">Overview</a></div><div class="collapse-content"><ul><li><a href="#header-ticketing-api">Ticketing API</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#">Resource Group</a></div><div class="collapse-content"><ul><li><a href="#oauth2-requests-post"><span class="badge post"><i class="fa fa-plus"></i></span>Oauth2 Request Access Token</a></li><li><a href="#events-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>List all events</a></li><li><a href="#event-dates-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>List all event dates</a></li><li><a href="#price-levels-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>List all price levels</a></li><li><a href="#seating-availability-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>List all seating availability</a></li><li><a href="#static-data-domains-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>List all domains</a></li><li><a href="#orders-operations">Orders operations</a><ul><li><a href="#orders-operations-post"><span class="badge post"><i class="fa fa-plus"></i></span>Create a new order</a></li><li><a href="#orders-operations-put"><span class="badge put"><i class="fa fa-pencil"></i></span>Update o create an order</a></li><li><a href="#orders-operations-patch"><span class="badge patch"><i class="fa fa-pencil"></i></span>Partial update of an order</a></li></ul></li><li><a href="#seats-operations">Seats operations</a><ul><li><a href="#seats-operations-put"><span class="badge put"><i class="fa fa-pencil"></i></span>Update the entire seats list</a></li><li><a href="#seats-operations-patch"><span class="badge patch"><i class="fa fa-pencil"></i></span>Partial update of the seats list</a></li><li><a href="#seats-operations-delete"><span class="badge delete"><i class="fa fa-times"></i></span>Delete a seat</a></li></ul></li></ul></div></div><p style="text-align: center; word-wrap: break-word;"><a href="http://onebox-api-url/1.0/ticketing-api">http://onebox-api-url/1.0/ticketing-api</a></p></nav><div class="content"><header><h1 id="top">onebox-ticketing-api</h1></header><h2 id="header-ticketing-api">Ticketing API <a class="permalink" href="#header-ticketing-api" aria-hidden="true">¶</a></h2>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>onebox-ticketing-api</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}body{color:black;background:white;font-family:'Roboto',Helvetica,sans-serif;font-size:14px;line-height:1.42}header{border-bottom:1px solid #f2f2f2;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:6px;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}h1{font-family:'Raleway',Helvetica,sans-serif;font-size:36px;font-weight:500}h2{font-family:'Raleway',Helvetica,sans-serif;font-size:30px;font-weight:500}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#428bca;text-decoration:none}li p{margin:0}dl dt{float:left;width:160px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:180px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font-family:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #d9d9d9}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#f0f6fb;border-left:4px solid #428bca}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#428bca}.warning{color:black;background-color:#fbf1f0;border-left:4px solid #c9302c}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#c9302c}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #d9d9d9;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#f2f2f2;border-radius:10px;margin-top:-2px;margin-bottom:-2px}.badge.get{color:#70bbe1;background-color:#d9edf7}.badge.head{color:#70bbe1;background-color:#d9edf7}.badge.options{color:#70bbe1;background-color:#d9edf7}.badge.put{color:#f0db70;background-color:#fcf8e3}.badge.patch{color:#f0db70;background-color:#fcf8e3}.badge.post{color:#93cd7c;background-color:#dff0d8}.badge.delete{color:#ce8383;background-color:#f2dede}.collapse-button{float:right}.collapse-button .close{display:none;color:#428bca;cursor:pointer}.collapse-button .open{color:#428bca;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%;width:76%}@media (max-width:1200px){nav{width:200px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:170px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content{margin-left:auto;margin-right:auto;width:95%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#f2f2f2;text-decoration:none !important;border-top:1px solid #d9d9d9;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #d9d9d9;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#f2f2f2;border-bottom:1px solid #d9d9d9;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}nav .resource-group .heading a{margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px}.action h4.action-heading .method.get{color:#fff;background-color:#337ab7}.action h4.action-heading .method.head{color:#fff;background-color:#337ab7}.action h4.action-heading .method.options{color:#fff;background-color:#337ab7}.action h4.action-heading .method.put{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.patch{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.post{color:#fff;background-color:#5cb85c}.action h4.action-heading .method.delete{color:#fff;background-color:#d9534f}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#bce8f1}.action.get h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.head{border-color:#bce8f1}.action.head h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.options{border-color:#bce8f1}.action.options h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.post{border-color:#d6e9c6}.action.post h4.action-heading{color:#5cb85c;background:#dff0d8;border-bottom-color:#d6e9c6}.action.put{border-color:#faebcc}.action.put h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.patch{border-color:#faebcc}.action.patch h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.delete{border-color:#ebccd1}.action.delete h4.action-heading{color:#d9534f;background:#f2dede;border-bottom-color:#ebccd1}</style></head><body class="preload"><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#top">Overview</a></div><div class="collapse-content"><ul><li><a href="#header-ticketing-api">Ticketing API</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#">Resource Group</a></div><div class="collapse-content"><ul><li><a href="#oauth2-requests-post"><span class="badge post"><i class="fa fa-plus"></i></span>Oauth2 Request Access Token</a></li><li><a href="#events-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>List all events</a></li><li><a href="#event-dates-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>List all event dates</a></li><li><a href="#price-levels-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>List all price levels</a></li><li><a href="#seating-availability-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>List all seating availability</a></li><li><a href="#static-data-domains-get"><span class="badge get"><i class="fa fa-arrow-down"></i></span>List all domains</a></li><li><a href="#orders-operations">Orders operations</a><ul><li><a href="#orders-operations-post"><span class="badge post"><i class="fa fa-plus"></i></span>Create a new order</a></li><li><a href="#orders-operations-patch"><span class="badge patch"><i class="fa fa-pencil"></i></span>Partial update of an order</a></li></ul></li><li><a href="#tickets-seat-operations">Tickets seat operations</a><ul><li><a href="#tickets-seat-operations-put"><span class="badge put"><i class="fa fa-pencil"></i></span>Update the entire seats list</a></li><li><a href="#tickets-seat-operations-patch"><span class="badge patch"><i class="fa fa-pencil"></i></span>Partial update of the tickets seat list</a></li><li><a href="#tickets-seat-operations-delete"><span class="badge delete"><i class="fa fa-times"></i></span>Delete a ticket seat</a></li></ul></li></ul></div></div><p style="text-align: center; word-wrap: break-word;"><a href="http://onebox-api-url/1.0/ticketing-api">http://onebox-api-url/1.0/ticketing-api</a></p></nav><div class="content"><header><h1 id="top">onebox-ticketing-api</h1></header><h2 id="header-ticketing-api">Ticketing API <a class="permalink" href="#header-ticketing-api" aria-hidden="true">¶</a></h2>
 <ul>
 <li>
 <p>Search for events, sessions, venue price zones and its availability</p>
@@ -400,40 +400,44 @@ Once you have a token you can use it in all API calls as shown below.</p>
 + <code>INITIATE</code> - Null value to set up an empty order
 + <code>PREORDER</code> - Lock tickets for a while
 + <code>PAID</code> - Mark tickets as paid and confirmed
-If the allocation (<a href="http://seat.id">seat.id</a>) is not known, the system will automatically allocate the number of seats from “seats_number” field. System will always try to allocate the best seats available.</p>
+If the allocation (seat_id) is not known, the system will automatically allocate the number of seats from “seats_number” field. System will always try to allocate the best seats available. If the desired seating is not numbered, then only the price_level_id is needed.</p>
 <div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">events</span>":<span class="hljs-value">[
+  <span class="hljs-string">"events"</span>:[
     {
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-      "<span class="hljs-attribute">event_date_id</span>": <span class="hljs-value"><span class="hljs-string">"2"</span></span>,
-      "<span class="hljs-attribute">seats</span>":<span class="hljs-value">[
+      <span class="hljs-string">"id"</span>: <span class="hljs-string">"4345"</span>,
+      <span class="hljs-string">"event_date_id"</span>: <span class="hljs-string">"2"</span>,
+      <span class="hljs-string">"tickets"</span>:[
         {
-          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"454"</span></span>,
-          "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
-          "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
-          "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-          "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
-            "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-            "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-            "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
-          </span>}
-        </span>},
+          <span class="hljs-string">"seat_id"</span>: <span class="hljs-string">"454"</span>,
+          <span class="hljs-string">"is_numbered"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-string">"price_level_id"</span>: <span class="hljs-string">"4345"</span>,
+          <span class="hljs-string">"buyer"</span>:{
+            <span class="hljs-string">"personal_id"</span>: <span class="hljs-string">"455444300E"</span>,
+            <span class="hljs-string">"partner_id"</span>: <span class="hljs-string">"3453"</span>,
+            <span class="hljs-string">"partner_pass"</span>: <span class="hljs-string">"1234"</span>
+          }
+        },
         {
-          "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-          "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">2</span></span>,
-          "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
-          "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-          "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
-            "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-            "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-            "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
-        </span>}
+          <span class="hljs-string">"is_numbered"</span>: <span class="hljs-literal">false</span>,
+          <span class="hljs-string">"price_level_id"</span>: <span class="hljs-string">"4345"</span>,
+          <span class="hljs-string">"buyer"</span>:{
+            <span class="hljs-string">"personal_id"</span>: <span class="hljs-string">"455444300E"</span>,
+            <span class="hljs-string">"partner_id"</span>: <span class="hljs-string">"3453"</span>,
+            <span class="hljs-string">"partner_pass"</span>: <span class="hljs-string">"1234"</span>
+        },
+        {
+          <span class="hljs-string">"is_numbered"</span>: <span class="hljs-literal">false</span>,
+          <span class="hljs-string">"price_level_id"</span>: <span class="hljs-string">"4345"</span>,
+          <span class="hljs-string">"buyer"</span>:{
+            <span class="hljs-string">"personal_id"</span>: <span class="hljs-string">"455444300E"</span>,
+            <span class="hljs-string">"partner_id"</span>: <span class="hljs-string">"3453"</span>,
+            <span class="hljs-string">"partner_pass"</span>: <span class="hljs-string">"1234"</span>
+        }
       ]
-    </span>}
-  ]</span>,
-  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"PREORDER"</span>
-</span>}
-</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+    }
+  ],
+  <span class="hljs-string">"status"</span>: <span class="hljs-string">"PREORDER"</span>
+}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4322"</span></span>,
     "<span class="hljs-attribute">preorder_id</span>": <span class="hljs-value"><span class="hljs-string">"fksjfkajhkfj4kj53k45j3knrkfndkfn"</span></span>,
     "<span class="hljs-attribute">events</span>":<span class="hljs-value">[
@@ -441,11 +445,10 @@ If the allocation (<a href="http://seat.id">seat.id</a>) is not known, the syste
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
         "<span class="hljs-attribute">event_date_id</span>": <span class="hljs-value"><span class="hljs-string">"2"</span></span>,
         "<span class="hljs-attribute">remaining_release_seats_time</span>": <span class="hljs-value"><span class="hljs-number">125</span></span>,
-        "<span class="hljs-attribute">seats</span>": <span class="hljs-value">[
+        "<span class="hljs-attribute">tickets</span>": <span class="hljs-value">[
             {
-              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
-              "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-              "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"342"</span></span>,
+              "<span class="hljs-attribute">seat_id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
               "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
               "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
               "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
@@ -463,15 +466,31 @@ If the allocation (<a href="http://seat.id">seat.id</a>) is not known, the syste
               </span>}
             </span>},
             {
-              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-              "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-              "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"125"</span></span>,
               "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
               "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
-              "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-              "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-              "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
-              "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
+              "<span class="hljs-attribute">row</span>": <span class="hljs-value"></span>,
+              "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+              "<span class="hljs-attribute">seat</span>": <span class="hljs-value"></span>,
+              "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"FREE"</span></span>,
+              "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+              "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+              "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+              "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+              "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
+                "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
+                "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
+                "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+              </span>}
+            </span>},
+            {
+              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
+              "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
+              "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
+              "<span class="hljs-attribute">row</span>": <span class="hljs-value"></span>,
+              "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+              "<span class="hljs-attribute">seat</span>": <span class="hljs-value"></span>,
+              "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"FREE"</span></span>,
               "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
               "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
               "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
@@ -498,140 +517,11 @@ If the allocation (<a href="http://seat.id">seat.id</a>) is not known, the syste
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>401</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"unauthorized"</span></span>,
   "<span class="hljs-attribute">error_description</span>": <span class="hljs-value"><span class="hljs-string">"Full authentication is required to access this resource"</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="orders-operations-put" class="action put"><h4 class="action-heading"><div class="name">Update o create an order</div><a href="#orders-operations-put" class="method put">PUT</a><code class="uri">/orders/{id}</code></h4><p>This will create or update an order resource, the user are entitled to set the number of wished seats by a given price_zone, to set detailed allocation if venue configuration allow you, to set the buyer personal details and delivery method. And overall, a client will be able to perform it directly (direct confirm) or in two steps (first lock the seats -default- getting a temporal token, then confirm the seats if already paid receving the final locator). Possible statues available are:
-+ <code>INITIATE</code> - Null value to set up an empty order
-+ <code>PREORDER</code> - Lock tickets for a while
-+ <code>PAID</code> - Mark tickets as paid and confirmed</p>
-<div class="title"><strong>Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Update the whole order id</p>
-</dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-    <span class="hljs-string">"id"</span>: <span class="hljs-string">"4322"</span>,
-    <span class="hljs-string">"preorder_id"</span>: <span class="hljs-string">"fksjfkajhkfj4kj53k45j3knrkfndkfn"</span>,
-    <span class="hljs-string">"events:"</span>[
-      {
-        <span class="hljs-string">"id"</span>: <span class="hljs-string">"4345"</span>,
-        <span class="hljs-string">"event_date_id"</span>: <span class="hljs-string">"2"</span>,
-        <span class="hljs-string">"remaining_release_seats_time"</span>: <span class="hljs-number">125</span>,
-        <span class="hljs-string">"seats"</span>: [
-            {
-              <span class="hljs-string">"id"</span>: <span class="hljs-string">"126"</span>,
-              <span class="hljs-string">"total_amount"</span>: <span class="hljs-number">1</span>,
-              <span class="hljs-string">"is_numbered"</span>: <span class="hljs-literal">true</span>,
-              <span class="hljs-string">"price_level_id"</span>: <span class="hljs-string">"4345"</span>,
-              <span class="hljs-string">"supplier_id"</span>: <span class="hljs-string">"avet-fcb"</span>,
-              <span class="hljs-string">"row"</span>: <span class="hljs-number">20</span>,
-              <span class="hljs-string">"row_name"</span>: <span class="hljs-string">"20"</span>,
-              <span class="hljs-string">"seat"</span>: <span class="hljs-number">3</span>,
-              <span class="hljs-string">"seat_name"</span>: <span class="hljs-string">"3A"</span>,
-              <span class="hljs-string">"entrance"</span>: <span class="hljs-string">""</span>,
-              <span class="hljs-string">"gate"</span>: <span class="hljs-string">"1"</span>,
-              <span class="hljs-string">"block"</span>: <span class="hljs-string">"1"</span>,
-              <span class="hljs-string">"sector"</span>: <span class="hljs-string">""</span>,
-              <span class="hljs-string">"buyer"</span>:{
-                <span class="hljs-string">"personal_id"</span>: <span class="hljs-string">"455444300E"</span>,
-                <span class="hljs-string">"partner_id"</span>: <span class="hljs-string">"3453"</span>,
-                <span class="hljs-string">"partner_pass"</span>: <span class="hljs-string">"1234"</span>
-              }
-            },
-            {
-              <span class="hljs-string">"id"</span>: <span class="hljs-string">""</span>,
-              <span class="hljs-string">"total_amount"</span>: <span class="hljs-number">1</span>,
-              <span class="hljs-string">"is_numbered"</span>: <span class="hljs-literal">false</span>,
-              <span class="hljs-string">"price_level_id"</span>: <span class="hljs-string">"4345"</span>,
-              <span class="hljs-string">"supplier_id"</span>: <span class="hljs-string">"avet-fcb"</span>,
-              <span class="hljs-string">"row"</span>: <span class="hljs-number">20</span>,
-              <span class="hljs-string">"row_name"</span>: <span class="hljs-string">"20"</span>,
-              <span class="hljs-string">"seat"</span>: <span class="hljs-number">4</span>,
-              <span class="hljs-string">"seat_name"</span>: <span class="hljs-string">"3A"</span>,
-              <span class="hljs-string">"entrance"</span>: <span class="hljs-string">""</span>,
-              <span class="hljs-string">"gate"</span>: <span class="hljs-string">"1"</span>,
-              <span class="hljs-string">"block"</span>: <span class="hljs-string">"1"</span>,
-              <span class="hljs-string">"sector"</span>: <span class="hljs-string">""</span>,
-              <span class="hljs-string">"buyer"</span>:{
-                <span class="hljs-string">"personal_id"</span>: <span class="hljs-string">"455444300E"</span>,
-                <span class="hljs-string">"partner_id"</span>: <span class="hljs-string">"3453"</span>,
-                <span class="hljs-string">"partner_pass"</span>: <span class="hljs-string">"1234"</span>
-              }
-            }
-        ]
-      }
-    ],
-    <span class="hljs-string">"client_details"</span>:{
-
-    },
-    <span class="hljs-string">"delivery_method"</span>:{
-
-    }
-    <span class="hljs-string">"status"</span>: <span class="hljs-string">"PAID"</span>
-}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-    "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4322"</span></span>,
-    "<span class="hljs-attribute">preorder_id</span>": <span class="hljs-value"><span class="hljs-string">"fksjfkajhkfj4kj53k45j3knrkfndkfn"</span></span>,
-    "<span class="hljs-attribute">events</span>":<span class="hljs-value">[
-      {
-        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-        "<span class="hljs-attribute">event_date_id</span>": <span class="hljs-value"><span class="hljs-string">"2"</span></span>,
-        "<span class="hljs-attribute">remaining_release_seats_time</span>": <span class="hljs-value"><span class="hljs-number">125</span></span>,
-        "<span class="hljs-attribute">seats</span>": <span class="hljs-value">[
-            {
-              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
-              "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-              "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
-              "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-              "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
-              "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-              "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-              "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
-              "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
-              "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-              "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-              "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-              "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-              "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
-                "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-                "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-                "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
-              </span>}
-            </span>},
-            {
-              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-              "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-              "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
-              "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-              "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
-              "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-              "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-              "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
-              "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
-              "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-              "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-              "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-              "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-              "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
-                "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-                "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-                "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
-              </span>}
-            </span>}
-        ]
-      </span>}
-    ]</span>,
-    "<span class="hljs-attribute">client_details</span>":<span class="hljs-value">{
-
-    }</span>,
-    "<span class="hljs-attribute">delivery_method</span>":<span class="hljs-value">{
-
-    }
-    <span class="hljs-string">"status"</span>: <span class="hljs-string">"PAID"</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>400</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Bad request"</span></span>,
-  "<span class="hljs-attribute">error_description</span>": <span class="hljs-value"><span class="hljs-string">"There was a syntax error, check your params request and try it again."</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>401</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"unauthorized"</span></span>,
-  "<span class="hljs-attribute">error_description</span>": <span class="hljs-value"><span class="hljs-string">"Full authentication is required to access this resource"</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="orders-operations-patch" class="action patch"><h4 class="action-heading"><div class="name">Partial update of an order</div><a href="#orders-operations-patch" class="method patch">PATCH</a><code class="uri">/orders/{id}</code></h4><p>This will partially update an order resource, the user are entitled to set the number of wished seats by a given price_zone, to set detailed allocation if venue configuration allow you, to set the buyer personal details and delivery method. And overall, a client will be able to perform it directly (direct confirm) or in two steps (first lock the seats -default- getting a temporal token, then confirm the seats if already paid receving the final locator). Possible statues available are:
 + <code>INITIATE</code> - Null value to set up an empty order
 + <code>PREORDER</code> - Lock tickets for a while
 + <code>PAID</code> - Mark tickets as paid and confirmed</p>
-<div class="title"><strong>Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Update the whole order id</p>
+<div class="title"><strong>Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Update the order identified by this id</p>
 </dd></dl></div><div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4322"</span></span>,
     "<span class="hljs-attribute">preorder_id</span>": <span class="hljs-value"><span class="hljs-string">"fksjfkajhkfj4kj53k45j3knrkfndkfn"</span></span>,
@@ -640,11 +530,10 @@ If the allocation (<a href="http://seat.id">seat.id</a>) is not known, the syste
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
         "<span class="hljs-attribute">event_date_id</span>": <span class="hljs-value"><span class="hljs-string">"2"</span></span>,
         "<span class="hljs-attribute">remaining_release_seats_time</span>": <span class="hljs-value"><span class="hljs-number">125</span></span>,
-        "<span class="hljs-attribute">seats</span>": <span class="hljs-value">[
+        "<span class="hljs-attribute">tickets</span>": <span class="hljs-value">[
             {
               "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
-              "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-              "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+              "<span class="hljs-attribute">seat_id</span>": <span class="hljs-value"><span class="hljs-string">"123"</span></span>,
               "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
               "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
               "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
@@ -662,15 +551,13 @@ If the allocation (<a href="http://seat.id">seat.id</a>) is not known, the syste
               </span>}
             </span>},
             {
-              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-              "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-              "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"125"</span></span>,
               "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
               "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
-              "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-              "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-              "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
-              "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
+              "<span class="hljs-attribute">row</span>": <span class="hljs-value"></span>,
+              "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+              "<span class="hljs-attribute">seat</span>": <span class="hljs-value"></span>,
+              "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"FREE"</span></span>,
               "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
               "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
               "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
@@ -685,11 +572,12 @@ If the allocation (<a href="http://seat.id">seat.id</a>) is not known, the syste
       </span>}
     ]</span>,
     "<span class="hljs-attribute">client_details</span>":<span class="hljs-value">{
-
-    }</span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"John"</span></span>,
+      "<span class="hljs-attribute">surname</span>": <span class="hljs-value"><span class="hljs-string">"Smith"</span>
+    </span>}</span>,
     "<span class="hljs-attribute">delivery_method</span>":<span class="hljs-value">{
-
-    }
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"PASSBOOK"</span>
+    </span>}
     <span class="hljs-string">"status"</span>: <span class="hljs-string">"PAID"</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4322"</span></span>,
@@ -699,56 +587,54 @@ If the allocation (<a href="http://seat.id">seat.id</a>) is not known, the syste
         "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
         "<span class="hljs-attribute">event_date_id</span>": <span class="hljs-value"><span class="hljs-string">"2"</span></span>,
         "<span class="hljs-attribute">remaining_release_seats_time</span>": <span class="hljs-value"><span class="hljs-number">125</span></span>,
-        "<span class="hljs-attribute">seats</span>": <span class="hljs-value">[
-            {
-              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
-              "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-              "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
-              "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-              "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
-              "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-              "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-              "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
-              "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
-              "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-              "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-              "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-              "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-              "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
-                "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-                "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-                "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
-              </span>}
-            </span>},
-            {
-              "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-              "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-              "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
-              "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-              "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
-              "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-              "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-              "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
-              "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
-              "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-              "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-              "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-              "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-              "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
-                "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-                "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-                "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
-              </span>}
+        "<span class="hljs-attribute">tickets</span>": <span class="hljs-value">[
+          {
+            "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
+            "<span class="hljs-attribute">seat_id</span>": <span class="hljs-value"><span class="hljs-string">"123"</span></span>,
+            "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
+            "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
+            "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
+            "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
+            "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+            "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
+            "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+            "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+            "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+            "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+            "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
+              "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
+              "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
+              "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
             </span>}
+          </span>},
+          {
+            "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"125"</span></span>,
+            "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
+            "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
+            "<span class="hljs-attribute">row</span>": <span class="hljs-value"></span>,
+            "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+            "<span class="hljs-attribute">seat</span>": <span class="hljs-value"></span>,
+            "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"FREE"</span></span>,
+            "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+            "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+            "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+            "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+            "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
+              "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
+              "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
+              "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+            </span>}
+          </span>}
         ]
       </span>}
     ]</span>,
     "<span class="hljs-attribute">client_details</span>":<span class="hljs-value">{
-
-    }</span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"John"</span></span>,
+      "<span class="hljs-attribute">surname</span>": <span class="hljs-value"><span class="hljs-string">"Smith"</span>
+    </span>}</span>,
     "<span class="hljs-attribute">delivery_method</span>":<span class="hljs-value">{
-
-    }
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"PASSBOOK"</span>
+    </span>}
     <span class="hljs-string">"status"</span>: <span class="hljs-string">"PAID"</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>400</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Bad request"</span></span>,
@@ -756,92 +642,89 @@ If the allocation (<a href="http://seat.id">seat.id</a>) is not known, the syste
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>401</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"unauthorized"</span></span>,
   "<span class="hljs-attribute">error_description</span>": <span class="hljs-value"><span class="hljs-string">"Full authentication is required to access this resource"</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="seats-operations" class="resource"><h3 class="resource-heading">Seats operations<a href="#seats-operations" class="permalink">&para;</a></h3><div id="seats-operations-put" class="action put"><h4 class="action-heading"><div class="name">Update the entire seats list</div><a href="#seats-operations-put" class="method put">PUT</a><code class="uri">/orders/seats</code></h4><p>This will manage the seating selection for a given already created order.</p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="tickets-seat-operations" class="resource"><h3 class="resource-heading">Tickets seat operations<a href="#tickets-seat-operations" class="permalink">&para;</a></h3><div id="tickets-seat-operations-put" class="action put"><h4 class="action-heading"><div class="name">Update the entire seats list</div><a href="#tickets-seat-operations-put" class="method put">PUT</a><code class="uri">/orders/tickets</code></h4><p>This will manage the seating selection for a given already created order.</p>
 <div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">seats</span>": <span class="hljs-value">[
-    {
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
-      "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-      "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
-      "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-      "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
-      "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-      "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-      "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
-      "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
-      "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">buyer</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-        "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-        "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+  "<span class="hljs-attribute">tickets</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
+        "<span class="hljs-attribute">seat_id</span>": <span class="hljs-value"><span class="hljs-string">"123"</span></span>,
+        "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
+        "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
+        "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
+        "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
+        "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+        "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
+        "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+        "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+        "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
+          "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
+          "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
+          "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+        </span>}
+      </span>},
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"125"</span></span>,
+        "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
+        "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
+        "<span class="hljs-attribute">row</span>": <span class="hljs-value"></span>,
+        "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">seat</span>": <span class="hljs-value"></span>,
+        "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"FREE"</span></span>,
+        "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+        "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+        "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
+          "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
+          "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
+          "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+        </span>}
       </span>}
-    </span>},
-    {
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-      "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
-      "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-      "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
-      "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-      "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-      "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
-      "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
-      "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">buyer</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-        "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-        "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
-      </span>}
-    </span>}
-  ]
+    ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">seats</span>": <span class="hljs-value">[
-    {
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
-      "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-      "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
-      "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-      "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
-      "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-      "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-      "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
-      "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
-      "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">buyer</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-        "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-        "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+    "<span class="hljs-attribute">tickets</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
+        "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
+        "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
+        "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
+        "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
+        "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">3</span></span>,
+        "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
+        "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+        "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+        "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
+          "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
+          "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
+          "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+        </span>}
+      </span>},
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"125"</span></span>,
+        "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+        "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
+        "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
+        "<span class="hljs-attribute">row</span>": <span class="hljs-value"></span>,
+        "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">seat</span>": <span class="hljs-value"></span>,
+        "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"FREE"</span></span>,
+        "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+        "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+        "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
+          "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
+          "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
+          "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+        </span>}
       </span>}
-    </span>},
-    {
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-      "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
-      "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-      "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
-      "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-      "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-      "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
-      "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
-      "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">buyer</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-        "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-        "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
-      </span>}
-    </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>400</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Bad request"</span></span>,
@@ -849,66 +732,86 @@ If the allocation (<a href="http://seat.id">seat.id</a>) is not known, the syste
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>401</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"unauthorized"</span></span>,
   "<span class="hljs-attribute">error_description</span>": <span class="hljs-value"><span class="hljs-string">"Full authentication is required to access this resource"</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="seats-operations-patch" class="action patch"><h4 class="action-heading"><div class="name">Partial update of the seats list</div><a href="#seats-operations-patch" class="method patch">PATCH</a><code class="uri">/orders/seats</code></h4><p>This will manage the seating selection for a given already created order.</p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="tickets-seat-operations-patch" class="action patch"><h4 class="action-heading"><div class="name">Partial update of the tickets seat list</div><a href="#tickets-seat-operations-patch" class="method patch">PATCH</a><code class="uri">/orders/tickets</code></h4><p>This will manage the seating selection for a given already created order.</p>
 <div class="title"><strong>Request</strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">seats</span>": <span class="hljs-value">[
-    {
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
-      "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
-      "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
-      "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-      "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-      "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-      "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
-      "<span class="hljs-attribute">buyer</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-        "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-        "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+  "<span class="hljs-attribute">tickets</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
+        "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
+        "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
+        "<span class="hljs-attribute">row</span>": <span class="hljs-value"></span>,
+        "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">seat</span>": <span class="hljs-value"></span>,
+        "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"FREE"</span></span>,
+        "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
+          "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
+          "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
+          "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+        </span>}
       </span>}
-    </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">seats</span>": <span class="hljs-value">[
-    {
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
-      "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-      "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
-      "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-      "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
-      "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-      "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-      "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
-      "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
-      "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">buyer</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-        "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-        "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+    "<span class="hljs-attribute">seats</span>": <span class="hljs-value">[
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"126"</span></span>,
+        "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
+        "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
+        "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
+        "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
+        "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">5</span></span>,
+        "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
+        "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+        "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+        "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
+          "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
+          "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
+          "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+        </span>}
+      </span>},
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"125"</span></span>,
+        "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
+        "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+        "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
+        "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
+        "<span class="hljs-attribute">row</span>": <span class="hljs-value"></span>,
+        "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">seat</span>": <span class="hljs-value"></span>,
+        "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"FREE"</span></span>,
+        "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+        "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
+        "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
+          "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
+          "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
+          "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+        </span>}
+      </span>},
+      {
+        "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span></span>,
+        "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
+        "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
+        "<span class="hljs-attribute">row</span>": <span class="hljs-value"></span>,
+        "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">seat</span>": <span class="hljs-value"></span>,
+        "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"FREE"</span></span>,
+        "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+        "<span class="hljs-attribute">buyer</span>":<span class="hljs-value">{
+          "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
+          "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
+          "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
+        </span>}
       </span>}
-    </span>},
-    {
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">total_amount</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-      "<span class="hljs-attribute">is_numbered</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
-      "<span class="hljs-attribute">price_level_id</span>": <span class="hljs-value"><span class="hljs-string">"4345"</span></span>,
-      "<span class="hljs-attribute">supplier_id</span>": <span class="hljs-value"><span class="hljs-string">"avet-fcb"</span></span>,
-      "<span class="hljs-attribute">row</span>": <span class="hljs-value"><span class="hljs-number">20</span></span>,
-      "<span class="hljs-attribute">row_name</span>": <span class="hljs-value"><span class="hljs-string">"20"</span></span>,
-      "<span class="hljs-attribute">seat</span>": <span class="hljs-value"><span class="hljs-number">4</span></span>,
-      "<span class="hljs-attribute">seat_name</span>": <span class="hljs-value"><span class="hljs-string">"3A"</span></span>,
-      "<span class="hljs-attribute">entrance</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">gate</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">block</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
-      "<span class="hljs-attribute">sector</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
-      "<span class="hljs-attribute">buyer</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">personal_id</span>": <span class="hljs-value"><span class="hljs-string">"455444300E"</span></span>,
-        "<span class="hljs-attribute">partner_id</span>": <span class="hljs-value"><span class="hljs-string">"3453"</span></span>,
-        "<span class="hljs-attribute">partner_pass</span>": <span class="hljs-value"><span class="hljs-string">"1234"</span>
-      </span>}
-    </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>400</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Bad request"</span></span>,
@@ -916,8 +819,8 @@ If the allocation (<a href="http://seat.id">seat.id</a>) is not known, the syste
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>401</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"unauthorized"</span></span>,
   "<span class="hljs-attribute">error_description</span>": <span class="hljs-value"><span class="hljs-string">"Full authentication is required to access this resource"</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="seats-operations-delete" class="action delete"><h4 class="action-heading"><div class="name">Delete a seat</div><a href="#seats-operations-delete" class="method delete">DELETE</a><code class="uri">/orders/seats/{id}</code></h4><p>This will delete the given seat from an already created order.</p>
-<div class="title"><strong>Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Indicate a concrete seat from an order.</p>
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="tickets-seat-operations-delete" class="action delete"><h4 class="action-heading"><div class="name">Delete a ticket seat</div><a href="#tickets-seat-operations-delete" class="method delete">DELETE</a><code class="uri">/orders/tickets/{id}</code></h4><p>This will delete the given seat from an already created order.</p>
+<div class="title"><strong>Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>string</code>&nbsp;<span class="required">(required)</span>&nbsp;<p>Indicate a concrete ticket seat from an order.</p>
 </dd></dl></div><div class="title"><strong>Response&nbsp;&nbsp;<code>204</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>400</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Bad request"</span></span>,
   "<span class="hljs-attribute">error_description</span>": <span class="hljs-value"><span class="hljs-string">"There was a syntax error, check your params request and try it again."</span>
