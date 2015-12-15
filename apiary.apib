@@ -512,14 +512,7 @@ This will create a new order resource, the user are entitled to set the number o
 If the allocation (seat.id) is not known, the system will automatically allocate the number of seats from "seats_number" field. System will always try to allocate the best seats available.
 
 + Request  (application/json)
-        
-        + Headers
-        
-              Authorization: Bearer [OAUTH2_TOKEN]
-              Accept: application/json
-        
-        + Body
-        
+
         {
           "events":[
             {
@@ -642,13 +635,6 @@ This will create or update an order resource, the user are entitled to set the n
     + id (required, string) ... Update the whole order id
 
 + Request  (application/json)
-
-        + Headers
-
-              Authorization: Bearer [OAUTH2_TOKEN]
-              Accept: application/json
-
-        + Body
 
         {
             "id": "4322",
@@ -801,13 +787,6 @@ This will partially update an order resource, the user are entitled to set the n
 
 + Request  (application/json)
 
-        + Headers
-
-              Authorization: Bearer [OAUTH2_TOKEN]
-              Accept: application/json
-
-        + Body
-
         {
             "id": "4322",
             "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
@@ -954,13 +933,6 @@ This will manage the seating selection for a given already created order.
 
 + Request  (application/json)
 
-    + Headers
-
-              Authorization: Bearer [OAUTH2_TOKEN]
-              Accept: application/json
-
-        + Body
-
         {
           "seats": [
               {
@@ -1073,13 +1045,6 @@ This will manage the seating selection for a given already created order.
 
 + Request  (application/json)
 
-        + Headers
-
-              Authorization: Bearer [OAUTH2_TOKEN]
-              Accept: application/json
-
-        + Body
-
         {
           "seats": [
               {
@@ -1165,42 +1130,9 @@ This will manage the seating selection for a given already created order.
 This will delete the given seat from an already created order.
 
 + Parameters
-
     + id (required, string) ... Indicate a concrete seat from an order.
 
-+ Request  (application/json)
-
-        + Headers
-
-              Authorization: Bearer [OAUTH2_TOKEN]
-              Accept: application/json
-
-+ Response 201 (application/json)
-
-        {
-            "seats": [
-              {
-                "id": "",
-                "total_amount": 1,
-                "is_numbered": false,
-                "price_level_id": "4345",
-                "supplier_id": "avet-fcb",
-                "row": 20,
-                "row_name": "20",
-                "seat": 4,
-                "seat_name": "3A",
-                "entrance": "",
-                "gate": "1",
-                "block": "1",
-                "sector": "",
-                "buyer":{
-                  "personal_id": "455444300E",
-                  "partner_id": "3453",
-                  "partner_pass": "1234"
-                }
-              }
-          ]
-        }
++ Response 204 (application/json)
 
 + Response 400 (application/json)
 
