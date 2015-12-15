@@ -518,10 +518,9 @@ If the allocation (seat.id) is not known, the system will automatically allocate
             {
               "id": "4345",
               "event_date_id": "2",
-              "seats":[
+              "tickets":[
                 {
-                  "id": "454",
-                  "total_amount": null,
+                  "seat_id": "454",
                   "is_numbered": true,
                   "price_level_id": "4345",
                   "buyer":{
@@ -531,8 +530,14 @@ If the allocation (seat.id) is not known, the system will automatically allocate
                   }
                 },
                 {
-                  "id": "",
-                  "total_amount": 2,
+                  "is_numbered": false,
+                  "price_level_id": "4345",
+                  "buyer":{
+                    "personal_id": "455444300E",
+                    "partner_id": "3453",
+                    "partner_pass": "1234"
+                },
+                {
                   "is_numbered": false,
                   "price_level_id": "4345",
                   "buyer":{
@@ -556,10 +561,10 @@ If the allocation (seat.id) is not known, the system will automatically allocate
                 "id": "4345",
                 "event_date_id": "2",
                 "remaining_release_seats_time": 125,
-                "seats": [
+                "tickets": [
                     {
-                      "id": "126",
-                      "total_amount": 1,
+                      "id": "342",
+                      "seat_id": "126",
                       "is_numbered": true,
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
@@ -578,14 +583,32 @@ If the allocation (seat.id) is not known, the system will automatically allocate
                       }
                     },
                     {
-                      "id": "",
-                      "total_amount": 1,
+                      "id": "125",
                       "is_numbered": false,
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
-                      "row": 20,
-                      "row_name": "20",
-                      "seat": 4,
+                      "row": ,
+                      "row_name": "",
+                      "seat": ,
+                      "seat_name": "3A",
+                      "entrance": "",
+                      "gate": "1",
+                      "block": "1",
+                      "sector": "",
+                      "buyer":{
+                        "personal_id": "455444300E",
+                        "partner_id": "3453",
+                        "partner_pass": "1234"
+                      }
+                    },
+                    {
+                      "id": "1234",
+                      "is_numbered": false,
+                      "price_level_id": "4345",
+                      "supplier_id": "avet-fcb",
+                      "row": ,
+                      "row_name": "",
+                      "seat": ,
                       "seat_name": "3A",
                       "entrance": "",
                       "gate": "1",
@@ -1039,29 +1062,34 @@ This will manage the seating selection for a given already created order.
           "error_description": "Full authentication is required to access this resource"
         }
 
-### Partial update of the seats list [PATCH]
+### Partial update of the tickets seat list [PATCH]
 
 This will manage the seating selection for a given already created order.
 
 + Request  (application/json)
 
         {
-          "seats": [
+          "tickets": [
               {
-                "id": "126",
-                "total_amount": null,
-                "is_numbered": true,
+                "id": "1234",
+                "is_numbered": false,
                 "price_level_id": "4345",
-                "row": 20,
-                "row_name": "20",
-                "seat": 5,
+                "supplier_id": "avet-fcb",
+                "row": ,
+                "row_name": "",
+                "seat": ,
+                "seat_name": "3A",
+                "entrance": "",
+                "gate": "",
+                "block": "",
+                "sector": "",
                 "buyer":{
                   "personal_id": "455444300E",
                   "partner_id": "3453",
                   "partner_pass": "1234"
                 }
               }
-            ]
+          ]
         }
 
 + Response 200 (application/json)
@@ -1125,12 +1153,12 @@ This will manage the seating selection for a given already created order.
           "error_description": "Full authentication is required to access this resource"
         }
 
-### Delete a seat [DELETE]
+### Delete a ticket seat [DELETE]
 
 This will delete the given seat from an already created order.
 
 + Parameters
-    + id (required, string) ... Indicate a concrete seat from an order.
+    + id (required, string) ... Indicate a concrete ticket seat from an order.
 
 + Response 204 (application/json)
 
