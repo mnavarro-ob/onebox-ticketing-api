@@ -513,20 +513,23 @@ If the allocation (seat.id) is not known, the system will automatically allocate
 
 + Request  (application/json)
 
+        + Headers
+
+              Authorization: Bearer [OAUTH2_TOKEN]
+              Accept: application/json
+
+        + Body
+
         {
           "events":[
             {
               "id": "4345",
               "event_date_id": "2",
-              "price_levels":[
-                {
-                  "id": "434",
-                  "seats_number": 2
-                }
-              ],
               "seats":[
                 {
                   "id": "454",
+                  "total_amount": null,
+                  "is_numbered": true,
                   "price_level_id": "4345",
                   "buyer":{
                     "personal_id": "455444300E",
@@ -535,7 +538,9 @@ If the allocation (seat.id) is not known, the system will automatically allocate
                   }
                 },
                 {
-                  "id": "455",
+                  "id": "",
+                  "total_amount": 2,
+                  "is_numbered": false,
                   "price_level_id": "4345",
                   "buyer":{
                     "personal_id": "455444300E",
@@ -557,16 +562,12 @@ If the allocation (seat.id) is not known, the system will automatically allocate
               {
                 "id": "4345",
                 "event_date_id": "2",
-                "price_levels":[
-                  {
-                    "id": "434",
-                    "seats_number": 2
-                  }
-                ],
                 "remaining_release_seats_time": 125,
                 "seats": [
                     {
                       "id": "126",
+                      "total_amount": 1,
+                      "is_numbered": true,
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
                       "row": 20,
@@ -584,7 +585,9 @@ If the allocation (seat.id) is not known, the system will automatically allocate
                       }
                     },
                     {
-                      "id": "127",
+                      "id": "",
+                      "total_amount": 1,
+                      "is_numbered": false,
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
                       "row": 20,
@@ -640,6 +643,13 @@ This will create or update an order resource, the user are entitled to set the n
 
 + Request  (application/json)
 
+        + Headers
+
+              Authorization: Bearer [OAUTH2_TOKEN]
+              Accept: application/json
+
+        + Body
+
         {
             "id": "4322",
             "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
@@ -647,16 +657,12 @@ This will create or update an order resource, the user are entitled to set the n
               {
                 "id": "4345",
                 "event_date_id": "2",
-                "price_levels":[
-                  {
-                    "id": "434",
-                    "seats_number": 2
-                  }
-                ],
                 "remaining_release_seats_time": 125,
                 "seats": [
                     {
                       "id": "126",
+                      "total_amount": 1,
+                      "is_numbered": true,
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
                       "row": 20,
@@ -674,7 +680,9 @@ This will create or update an order resource, the user are entitled to set the n
                       }
                     },
                     {
-                      "id": "127",
+                      "id": "",
+                      "total_amount": 1,
+                      "is_numbered": false,
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
                       "row": 20,
@@ -712,16 +720,12 @@ This will create or update an order resource, the user are entitled to set the n
               {
                 "id": "4345",
                 "event_date_id": "2",
-                "price_levels":[
-                  {
-                    "id": "434",
-                    "seats_number": 2
-                  }
-                ],
                 "remaining_release_seats_time": 125,
                 "seats": [
                     {
                       "id": "126",
+                      "total_amount": 1,
+                      "is_numbered": true,
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
                       "row": 20,
@@ -739,7 +743,9 @@ This will create or update an order resource, the user are entitled to set the n
                       }
                     },
                     {
-                      "id": "127",
+                      "id": "",
+                      "total_amount": 1,
+                      "is_numbered": false,
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
                       "row": 20,
@@ -795,6 +801,13 @@ This will partially update an order resource, the user are entitled to set the n
 
 + Request  (application/json)
 
+        + Headers
+
+              Authorization: Bearer [OAUTH2_TOKEN]
+              Accept: application/json
+
+        + Body
+
         {
             "id": "4322",
             "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
@@ -802,16 +815,12 @@ This will partially update an order resource, the user are entitled to set the n
               {
                 "id": "4345",
                 "event_date_id": "2",
-                "price_levels":[
-                  {
-                    "id": "434",
-                    "seats_number": 2
-                  }
-                ],
                 "remaining_release_seats_time": 125,
                 "seats": [
                     {
                       "id": "126",
+                      "total_amount": 1,
+                      "is_numbered": true,
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
                       "row": 20,
@@ -829,7 +838,9 @@ This will partially update an order resource, the user are entitled to set the n
                       }
                     },
                     {
-                      "id": "127",
+                      "id": "",
+                      "total_amount": 1,
+                      "is_numbered": false,
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
                       "row": 20,
@@ -867,16 +878,12 @@ This will partially update an order resource, the user are entitled to set the n
               {
                 "id": "4345",
                 "event_date_id": "2",
-                "price_levels":[
-                  {
-                    "id": "434",
-                    "seats_number": 2
-                  }
-                ],
                 "remaining_release_seats_time": 125,
                 "seats": [
                     {
                       "id": "126",
+                      "total_amount": 1,
+                      "is_numbered": true,
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
                       "row": 20,
@@ -894,7 +901,9 @@ This will partially update an order resource, the user are entitled to set the n
                       }
                     },
                     {
-                      "id": "127",
+                      "id": "",
+                      "total_amount": 1,
+                      "is_numbered": false,
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
                       "row": 20,
@@ -921,6 +930,276 @@ This will partially update an order resource, the user are entitled to set the n
 
             }
             "status": "PAID"
+        }
+
++ Response 400 (application/json)
+
+        {
+          "error": "Bad request",
+          "error_description": "There was a syntax error, check your params request and try it again."
+        }
+
++ Response 401 (application/json)
+
+        {
+          "error": "unauthorized",
+          "error_description": "Full authentication is required to access this resource"
+        }
+
+## Seats operations [/orders/{order_id}/seats/{id}]
+
+### Update the entire seats list [PUT]
+
+This will manage the seating selection for a given already created order.
+
++ Request  (application/json)
+
+    + Headers
+
+              Authorization: Bearer [OAUTH2_TOKEN]
+              Accept: application/json
+
+        + Body
+
+        {
+          "seats": [
+              {
+                "id": "126",
+                "total_amount": 1,
+                "is_numbered": true,
+                "price_level_id": "4345",
+                "supplier_id": "avet-fcb",
+                "row": 20,
+                "row_name": "20",
+                "seat": 3,
+                "seat_name": "3A",
+                "entrance": "",
+                "gate": "1",
+                "block": "1",
+                "sector": "",
+                "buyer":{
+                  "personal_id": "455444300E",
+                  "partner_id": "3453",
+                  "partner_pass": "1234"
+                }
+              },
+              {
+                "id": "",
+                "total_amount": 1,
+                "is_numbered": false,
+                "price_level_id": "4345",
+                "supplier_id": "avet-fcb",
+                "row": 20,
+                "row_name": "20",
+                "seat": 4,
+                "seat_name": "3A",
+                "entrance": "",
+                "gate": "1",
+                "block": "1",
+                "sector": "",
+                "buyer":{
+                  "personal_id": "455444300E",
+                  "partner_id": "3453",
+                  "partner_pass": "1234"
+                }
+              }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "seats": [
+              {
+                "id": "126",
+                "total_amount": 1,
+                "is_numbered": true,
+                "price_level_id": "4345",
+                "supplier_id": "avet-fcb",
+                "row": 20,
+                "row_name": "20",
+                "seat": 3,
+                "seat_name": "3A",
+                "entrance": "",
+                "gate": "1",
+                "block": "1",
+                "sector": "",
+                "buyer":{
+                  "personal_id": "455444300E",
+                  "partner_id": "3453",
+                  "partner_pass": "1234"
+                }
+              },
+              {
+                "id": "",
+                "total_amount": 1,
+                "is_numbered": false,
+                "price_level_id": "4345",
+                "supplier_id": "avet-fcb",
+                "row": 20,
+                "row_name": "20",
+                "seat": 4,
+                "seat_name": "3A",
+                "entrance": "",
+                "gate": "1",
+                "block": "1",
+                "sector": "",
+                "buyer":{
+                  "personal_id": "455444300E",
+                  "partner_id": "3453",
+                  "partner_pass": "1234"
+                }
+              }
+          ]
+        }
+
++ Response 400 (application/json)
+
+        {
+          "error": "Bad request",
+          "error_description": "There was a syntax error, check your params request and try it again."
+        }
+
++ Response 401 (application/json)
+
+        {
+          "error": "unauthorized",
+          "error_description": "Full authentication is required to access this resource"
+        }
+
+### Partial update of the seats list [PATCH]
+
+This will manage the seating selection for a given already created order.
+
++ Request  (application/json)
+
+        + Headers
+
+              Authorization: Bearer [OAUTH2_TOKEN]
+              Accept: application/json
+
+        + Body
+
+        {
+          "seats": [
+              {
+                "id": "126",
+                "total_amount": null,
+                "is_numbered": true,
+                "price_level_id": "4345",
+                "row": 20,
+                "row_name": "20",
+                "seat": 5,
+                "buyer":{
+                  "personal_id": "455444300E",
+                  "partner_id": "3453",
+                  "partner_pass": "1234"
+                }
+              }
+            ]
+        }
+
++ Response 200 (application/json)
+
+        {
+            "seats": [
+              {
+                "id": "126",
+                "total_amount": 1,
+                "is_numbered": null,
+                "price_level_id": "4345",
+                "supplier_id": "avet-fcb",
+                "row": 20,
+                "row_name": "20",
+                "seat": 5,
+                "seat_name": "3A",
+                "entrance": "",
+                "gate": "1",
+                "block": "1",
+                "sector": "",
+                "buyer":{
+                  "personal_id": "455444300E",
+                  "partner_id": "3453",
+                  "partner_pass": "1234"
+                }
+              },
+              {
+                "id": "",
+                "total_amount": 1,
+                "is_numbered": false,
+                "price_level_id": "4345",
+                "supplier_id": "avet-fcb",
+                "row": 20,
+                "row_name": "20",
+                "seat": 4,
+                "seat_name": "3A",
+                "entrance": "",
+                "gate": "1",
+                "block": "1",
+                "sector": "",
+                "buyer":{
+                  "personal_id": "455444300E",
+                  "partner_id": "3453",
+                  "partner_pass": "1234"
+                }
+              }
+          ]
+        }
+
++ Response 400 (application/json)
+
+        {
+          "error": "Bad request",
+          "error_description": "There was a syntax error, check your params request and try it again."
+        }
+
++ Response 401 (application/json)
+
+        {
+          "error": "unauthorized",
+          "error_description": "Full authentication is required to access this resource"
+        }
+
+### Delete a seat [DELETE]
+
+This will delete the given seat from an already created order.
+
++ Parameters
+
+    + id (required, string) ... Indicate a concrete seat from an order.
+
++ Request  (application/json)
+
+        + Headers
+
+              Authorization: Bearer [OAUTH2_TOKEN]
+              Accept: application/json
+
++ Response 201 (application/json)
+
+        {
+            "seats": [
+              {
+                "id": "",
+                "total_amount": 1,
+                "is_numbered": false,
+                "price_level_id": "4345",
+                "supplier_id": "avet-fcb",
+                "row": 20,
+                "row_name": "20",
+                "seat": 4,
+                "seat_name": "3A",
+                "entrance": "",
+                "gate": "1",
+                "block": "1",
+                "sector": "",
+                "buyer":{
+                  "personal_id": "455444300E",
+                  "partner_id": "3453",
+                  "partner_pass": "1234"
+                }
+              }
+          ]
         }
 
 + Response 400 (application/json)
