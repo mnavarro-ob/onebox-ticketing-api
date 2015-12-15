@@ -501,7 +501,7 @@ Retrieve the static data needed for mapping and quering purposes. You will be ab
           "error_description": "Full authentication is required to access this resource"
         }
 
-## Orders collection [/orders/{id}]
+## Orders operations [/orders/{id}]
 
 ### Create a new order [POST]
 
@@ -512,14 +512,14 @@ This will create a new order resource, the user are entitled to set the number o
 If the allocation (seat.id) is not known, the system will automatically allocate the number of seats from "seats_number" field. System will always try to allocate the best seats available.
 
 + Request  (application/json)
-
+        
         + Headers
-
+        
               Authorization: Bearer [OAUTH2_TOKEN]
               Accept: application/json
-
+        
         + Body
-
+        
         {
           "events":[
             {
