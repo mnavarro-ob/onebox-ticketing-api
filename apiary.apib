@@ -509,7 +509,7 @@ This will create a new order resource, the user are entitled to set the number o
       + `INITIATE` - Null value to set up an empty order
       + `PREORDER` - Lock tickets for a while
       + `PAID` - Mark tickets as paid and confirmed
-If the allocation (seat.id) is not known, the system will automatically allocate the number of seats from "seats_number" field. System will always try to allocate the best seats available.
+If the allocation (seat_id) is not known, the system will automatically allocate the number of seats from "seats_number" field. System will always try to allocate the best seats available. If the desired seating is not numbered, then only the price_level_id is needed.
 
 + Request  (application/json)
 
@@ -518,10 +518,9 @@ If the allocation (seat.id) is not known, the system will automatically allocate
             {
               "id": "4345",
               "event_date_id": "2",
-              "seats":[
+              "tickets":[
                 {
-                  "id": "454",
-                  "total_amount": null,
+                  "seat_id": "454",
                   "is_numbered": true,
                   "price_level_id": "4345",
                   "buyer":{
@@ -531,8 +530,14 @@ If the allocation (seat.id) is not known, the system will automatically allocate
                   }
                 },
                 {
-                  "id": "",
-                  "total_amount": 2,
+                  "is_numbered": false,
+                  "price_level_id": "4345",
+                  "buyer":{
+                    "personal_id": "455444300E",
+                    "partner_id": "3453",
+                    "partner_pass": "1234"
+                },
+                {
                   "is_numbered": false,
                   "price_level_id": "4345",
                   "buyer":{
@@ -556,11 +561,10 @@ If the allocation (seat.id) is not known, the system will automatically allocate
                 "id": "4345",
                 "event_date_id": "2",
                 "remaining_release_seats_time": 125,
-                "seats": [
+                "tickets": [
                     {
-                      "id": "126",
-                      "total_amount": 1,
-                      "is_numbered": true,
+                      "id": "342",
+                      "seat_id": "126",
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
                       "row": 20,
@@ -578,15 +582,31 @@ If the allocation (seat.id) is not known, the system will automatically allocate
                       }
                     },
                     {
-                      "id": "",
-                      "total_amount": 1,
-                      "is_numbered": false,
+                      "id": "125",
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
-                      "row": 20,
-                      "row_name": "20",
-                      "seat": 4,
-                      "seat_name": "3A",
+                      "row": ,
+                      "row_name": "",
+                      "seat": ,
+                      "seat_name": "FREE",
+                      "entrance": "",
+                      "gate": "1",
+                      "block": "1",
+                      "sector": "",
+                      "buyer":{
+                        "personal_id": "455444300E",
+                        "partner_id": "3453",
+                        "partner_pass": "1234"
+                      }
+                    },
+                    {
+                      "id": "1234",
+                      "price_level_id": "4345",
+                      "supplier_id": "avet-fcb",
+                      "row": ,
+                      "row_name": "",
+                      "seat": ,
+                      "seat_name": "FREE",
                       "entrance": "",
                       "gate": "1",
                       "block": "1",
@@ -623,157 +643,6 @@ If the allocation (seat.id) is not known, the system will automatically allocate
           "error_description": "Full authentication is required to access this resource"
         }
 
-### Update o create an order [PUT]
-
-This will create or update an order resource, the user are entitled to set the number of wished seats by a given price_zone, to set detailed allocation if venue configuration allow you, to set the buyer personal details and delivery method. And overall, a client will be able to perform it directly (direct confirm) or in two steps (first lock the seats -default- getting a temporal token, then confirm the seats if already paid receving the final locator). Possible statues available are:
-      + `INITIATE` - Null value to set up an empty order
-      + `PREORDER` - Lock tickets for a while
-      + `PAID` - Mark tickets as paid and confirmed
-
-+ Parameters
-
-    + id (required, string) ... Update the whole order id
-
-+ Request  (application/json)
-
-        {
-            "id": "4322",
-            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
-            "events:"[
-              {
-                "id": "4345",
-                "event_date_id": "2",
-                "remaining_release_seats_time": 125,
-                "seats": [
-                    {
-                      "id": "126",
-                      "total_amount": 1,
-                      "is_numbered": true,
-                      "price_level_id": "4345",
-                      "supplier_id": "avet-fcb",
-                      "row": 20,
-                      "row_name": "20",
-                      "seat": 3,
-                      "seat_name": "3A",
-                      "entrance": "",
-                      "gate": "1",
-                      "block": "1",
-                      "sector": "",
-                      "buyer":{
-                        "personal_id": "455444300E",
-                        "partner_id": "3453",
-                        "partner_pass": "1234"
-                      }
-                    },
-                    {
-                      "id": "",
-                      "total_amount": 1,
-                      "is_numbered": false,
-                      "price_level_id": "4345",
-                      "supplier_id": "avet-fcb",
-                      "row": 20,
-                      "row_name": "20",
-                      "seat": 4,
-                      "seat_name": "3A",
-                      "entrance": "",
-                      "gate": "1",
-                      "block": "1",
-                      "sector": "",
-                      "buyer":{
-                        "personal_id": "455444300E",
-                        "partner_id": "3453",
-                        "partner_pass": "1234"
-                      }
-                    }
-                ]
-              }
-            ],
-            "client_details":{
-
-            },
-            "delivery_method":{
-
-            }
-            "status": "PAID"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "id": "4322",
-            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
-            "events":[
-              {
-                "id": "4345",
-                "event_date_id": "2",
-                "remaining_release_seats_time": 125,
-                "seats": [
-                    {
-                      "id": "126",
-                      "total_amount": 1,
-                      "is_numbered": true,
-                      "price_level_id": "4345",
-                      "supplier_id": "avet-fcb",
-                      "row": 20,
-                      "row_name": "20",
-                      "seat": 3,
-                      "seat_name": "3A",
-                      "entrance": "",
-                      "gate": "1",
-                      "block": "1",
-                      "sector": "",
-                      "buyer":{
-                        "personal_id": "455444300E",
-                        "partner_id": "3453",
-                        "partner_pass": "1234"
-                      }
-                    },
-                    {
-                      "id": "",
-                      "total_amount": 1,
-                      "is_numbered": false,
-                      "price_level_id": "4345",
-                      "supplier_id": "avet-fcb",
-                      "row": 20,
-                      "row_name": "20",
-                      "seat": 4,
-                      "seat_name": "3A",
-                      "entrance": "",
-                      "gate": "1",
-                      "block": "1",
-                      "sector": "",
-                      "buyer":{
-                        "personal_id": "455444300E",
-                        "partner_id": "3453",
-                        "partner_pass": "1234"
-                      }
-                    }
-                ]
-              }
-            ],
-            "client_details":{
-
-            },
-            "delivery_method":{
-
-            }
-            "status": "PAID"
-        }
-
-+ Response 400 (application/json)
-
-        {
-          "error": "Bad request",
-          "error_description": "There was a syntax error, check your params request and try it again."
-        }
-
-+ Response 401 (application/json)
-
-        {
-          "error": "unauthorized",
-          "error_description": "Full authentication is required to access this resource"
-        }
-
 ### Partial update of an order [PATCH]
 
 This will partially update an order resource, the user are entitled to set the number of wished seats by a given price_zone, to set detailed allocation if venue configuration allow you, to set the buyer personal details and delivery method. And overall, a client will be able to perform it directly (direct confirm) or in two steps (first lock the seats -default- getting a temporal token, then confirm the seats if already paid receving the final locator). Possible statues available are:
@@ -783,7 +652,7 @@ This will partially update an order resource, the user are entitled to set the n
 
 + Parameters
 
-    + id (required, string) ... Update the whole order id
+    + id (required, string) ... Update the order identified by this id
 
 + Request  (application/json)
 
@@ -795,11 +664,10 @@ This will partially update an order resource, the user are entitled to set the n
                 "id": "4345",
                 "event_date_id": "2",
                 "remaining_release_seats_time": 125,
-                "seats": [
+                "tickets": [
                     {
                       "id": "126",
-                      "total_amount": 1,
-                      "is_numbered": true,
+                      "seat_id": "123",
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
                       "row": 20,
@@ -817,15 +685,13 @@ This will partially update an order resource, the user are entitled to set the n
                       }
                     },
                     {
-                      "id": "",
-                      "total_amount": 1,
-                      "is_numbered": false,
+                      "id": "125",
                       "price_level_id": "4345",
                       "supplier_id": "avet-fcb",
-                      "row": 20,
-                      "row_name": "20",
-                      "seat": 4,
-                      "seat_name": "3A",
+                      "row": ,
+                      "row_name": "",
+                      "seat": ,
+                      "seat_name": "FREE",
                       "entrance": "",
                       "gate": "1",
                       "block": "1",
@@ -840,10 +706,11 @@ This will partially update an order resource, the user are entitled to set the n
               }
             ],
             "client_details":{
-
+              "name": "John",
+              "surname": "Smith"
             },
             "delivery_method":{
-
+              "type": "PASSBOOK"
             }
             "status": "PAID"
         }
@@ -858,55 +725,53 @@ This will partially update an order resource, the user are entitled to set the n
                 "id": "4345",
                 "event_date_id": "2",
                 "remaining_release_seats_time": 125,
-                "seats": [
-                    {
-                      "id": "126",
-                      "total_amount": 1,
-                      "is_numbered": true,
-                      "price_level_id": "4345",
-                      "supplier_id": "avet-fcb",
-                      "row": 20,
-                      "row_name": "20",
-                      "seat": 3,
-                      "seat_name": "3A",
-                      "entrance": "",
-                      "gate": "1",
-                      "block": "1",
-                      "sector": "",
-                      "buyer":{
-                        "personal_id": "455444300E",
-                        "partner_id": "3453",
-                        "partner_pass": "1234"
-                      }
-                    },
-                    {
-                      "id": "",
-                      "total_amount": 1,
-                      "is_numbered": false,
-                      "price_level_id": "4345",
-                      "supplier_id": "avet-fcb",
-                      "row": 20,
-                      "row_name": "20",
-                      "seat": 4,
-                      "seat_name": "3A",
-                      "entrance": "",
-                      "gate": "1",
-                      "block": "1",
-                      "sector": "",
-                      "buyer":{
-                        "personal_id": "455444300E",
-                        "partner_id": "3453",
-                        "partner_pass": "1234"
-                      }
+                "tickets": [
+                  {
+                    "id": "126",
+                    "seat_id": "123",
+                    "price_level_id": "4345",
+                    "supplier_id": "avet-fcb",
+                    "row": 20,
+                    "row_name": "20",
+                    "seat": 3,
+                    "seat_name": "3A",
+                    "entrance": "",
+                    "gate": "1",
+                    "block": "1",
+                    "sector": "",
+                    "buyer":{
+                      "personal_id": "455444300E",
+                      "partner_id": "3453",
+                      "partner_pass": "1234"
                     }
+                  },
+                  {
+                    "id": "125",
+                    "price_level_id": "4345",
+                    "supplier_id": "avet-fcb",
+                    "row": ,
+                    "row_name": "",
+                    "seat": ,
+                    "seat_name": "FREE",
+                    "entrance": "",
+                    "gate": "1",
+                    "block": "1",
+                    "sector": "",
+                    "buyer":{
+                      "personal_id": "455444300E",
+                      "partner_id": "3453",
+                      "partner_pass": "1234"
+                    }
+                  }
                 ]
               }
             ],
             "client_details":{
-
+              "name": "John",
+              "surname": "Smith"
             },
             "delivery_method":{
-
+              "type": "PASSBOOK"
             }
             "status": "PAID"
         }
@@ -925,7 +790,7 @@ This will partially update an order resource, the user are entitled to set the n
           "error_description": "Full authentication is required to access this resource"
         }
 
-## Seats operations [/orders/{order_id}/seats/{id}]
+## Tickets seat operations [/orders/{order_id}/tickets/{id}]
 
 ### Update the entire seats list [PUT]
 
@@ -934,11 +799,10 @@ This will manage the seating selection for a given already created order.
 + Request  (application/json)
 
         {
-          "seats": [
+          "tickets": [
               {
                 "id": "126",
-                "total_amount": 1,
-                "is_numbered": true,
+                "seat_id": "123",
                 "price_level_id": "4345",
                 "supplier_id": "avet-fcb",
                 "row": 20,
@@ -956,15 +820,13 @@ This will manage the seating selection for a given already created order.
                 }
               },
               {
-                "id": "",
-                "total_amount": 1,
-                "is_numbered": false,
+                "id": "125",
                 "price_level_id": "4345",
                 "supplier_id": "avet-fcb",
-                "row": 20,
-                "row_name": "20",
-                "seat": 4,
-                "seat_name": "3A",
+                "row": ,
+                "row_name": "",
+                "seat": ,
+                "seat_name": "FREE",
                 "entrance": "",
                 "gate": "1",
                 "block": "1",
@@ -981,7 +843,7 @@ This will manage the seating selection for a given already created order.
 + Response 200 (application/json)
 
         {
-            "seats": [
+            "tickets": [
               {
                 "id": "126",
                 "total_amount": 1,
@@ -1003,15 +865,15 @@ This will manage the seating selection for a given already created order.
                 }
               },
               {
-                "id": "",
+                "id": "125",
                 "total_amount": 1,
                 "is_numbered": false,
                 "price_level_id": "4345",
                 "supplier_id": "avet-fcb",
-                "row": 20,
-                "row_name": "20",
-                "seat": 4,
-                "seat_name": "3A",
+                "row": ,
+                "row_name": "",
+                "seat": ,
+                "seat_name": "FREE",
                 "entrance": "",
                 "gate": "1",
                 "block": "1",
@@ -1039,29 +901,33 @@ This will manage the seating selection for a given already created order.
           "error_description": "Full authentication is required to access this resource"
         }
 
-### Partial update of the seats list [PATCH]
+### Partial update of the tickets seat list [PATCH]
 
 This will manage the seating selection for a given already created order.
 
 + Request  (application/json)
 
         {
-          "seats": [
+          "tickets": [
               {
-                "id": "126",
-                "total_amount": null,
-                "is_numbered": true,
+                "id": "1234",
                 "price_level_id": "4345",
-                "row": 20,
-                "row_name": "20",
-                "seat": 5,
+                "supplier_id": "avet-fcb",
+                "row": ,
+                "row_name": "",
+                "seat": ,
+                "seat_name": "FREE",
+                "entrance": "",
+                "gate": "",
+                "block": "",
+                "sector": "",
                 "buyer":{
                   "personal_id": "455444300E",
                   "partner_id": "3453",
                   "partner_pass": "1234"
                 }
               }
-            ]
+          ]
         }
 
 + Response 200 (application/json)
@@ -1070,8 +936,6 @@ This will manage the seating selection for a given already created order.
             "seats": [
               {
                 "id": "126",
-                "total_amount": 1,
-                "is_numbered": null,
                 "price_level_id": "4345",
                 "supplier_id": "avet-fcb",
                 "row": 20,
@@ -1089,18 +953,36 @@ This will manage the seating selection for a given already created order.
                 }
               },
               {
-                "id": "",
+                "id": "125",
                 "total_amount": 1,
                 "is_numbered": false,
                 "price_level_id": "4345",
                 "supplier_id": "avet-fcb",
-                "row": 20,
-                "row_name": "20",
-                "seat": 4,
-                "seat_name": "3A",
+                "row": ,
+                "row_name": "",
+                "seat": ,
+                "seat_name": "FREE",
                 "entrance": "",
                 "gate": "1",
                 "block": "1",
+                "sector": "",
+                "buyer":{
+                  "personal_id": "455444300E",
+                  "partner_id": "3453",
+                  "partner_pass": "1234"
+                }
+              },
+              {
+                "id": "1234",
+                "price_level_id": "4345",
+                "supplier_id": "avet-fcb",
+                "row": ,
+                "row_name": "",
+                "seat": ,
+                "seat_name": "FREE",
+                "entrance": "",
+                "gate": "",
+                "block": "",
                 "sector": "",
                 "buyer":{
                   "personal_id": "455444300E",
@@ -1125,12 +1007,12 @@ This will manage the seating selection for a given already created order.
           "error_description": "Full authentication is required to access this resource"
         }
 
-### Delete a seat [DELETE]
+### Delete a ticket seat [DELETE]
 
 This will delete the given seat from an already created order.
 
 + Parameters
-    + id (required, string) ... Indicate a concrete seat from an order.
+    + id (required, string) ... Indicate a concrete ticket seat from an order.
 
 + Response 204 (application/json)
 
