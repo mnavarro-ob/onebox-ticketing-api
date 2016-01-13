@@ -514,118 +514,110 @@ If the allocation (seat_id) is not known, the system will automatically allocate
 + Request  (application/json)
 
         {
-          "events":[
-            {
-              "id": "4345",
-              "event_date_id": "2",
-              "tickets":[
+            "order_id": "4322",
+            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
+            "order_total_price": 25.50,
+            "order_items": [
                 {
-                  "seat_id": "454",
-                  "is_numbered": true,
-                  "price_level_id": "4345",
-                  "buyer":{
-                    "personal_id": "455444300E",
-                    "partner_id": "3453",
-                    "partner_pass": "1234"
-                  }
-                },
-                {
-                  "is_numbered": false,
-                  "price_level_id": "4345",
-                  "buyer":{
-                    "personal_id": "455444300E",
-                    "partner_id": "3453",
-                    "partner_pass": "1234"
-                },
-                {
-                  "is_numbered": false,
-                  "price_level_id": "4345",
-                  "buyer":{
-                    "personal_id": "455444300E",
-                    "partner_id": "3453",
-                    "partner_pass": "1234"
+                    "supplier_id": "avet-fcb",
+                    "external_order_id": "34C88A4/1112016/145847",
+                    "delivery_method": {
+                        "type": "PASSBOOK"
+                    },
+                    "order_items_total_price": 25.50,
+                    "events":[
+                        {
+                          "event_id": "4345",
+                          "event_date_id": "2",
+                          "remaining_release_seats_time": 125,
+                          "event_total_price": 25.50,
+                          "tickets":[
+                            {
+                                "ticket_id": "342",
+                                "seat_id": "454",
+                                "is_numbered": true,
+                                "price_level_id": "4345",
+                                "row": 20,
+                                "row_name": "20",
+                                "seat": 3,
+                                "seat_name": "3A",
+                                "entrance": "",
+                                "gate": "1",
+                                "block": "1",
+                                "sector": "",
+                                "barcode": "",
+                                "price": 25.50,
+                                "status": "RESERVED",
+                                "buyer": {
+                                    "personal_id": "455444300E",
+                                    "partner_id": "3453",
+                                    "partner_pass": "1234"
+                                }
+                            }
+                          ]
+                        }
+                    ]
                 }
-              ]
-            }
-          ],
-          "status": "PREORDER"
+            ],
+            "client_details": {
+                "name": "John",
+                "surname": "Smith"
+            },
+            "status": "PREORDER"
         }
 
 + Response 201 (application/json)
 
         {
-            "id": "4322",
+            "order_id": "4322",
             "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
-            "events":[
-              {
-                "id": "4345",
-                "event_date_id": "2",
-                "remaining_release_seats_time": 125,
-                "tickets": [
-                    {
-                      "id": "342",
-                      "seat_id": "126",
-                      "price_level_id": "4345",
-                      "supplier_id": "avet-fcb",
-                      "row": 20,
-                      "row_name": "20",
-                      "seat": 3,
-                      "seat_name": "3A",
-                      "entrance": "",
-                      "gate": "1",
-                      "block": "1",
-                      "sector": "",
-                      "buyer":{
-                        "personal_id": "455444300E",
-                        "partner_id": "3453",
-                        "partner_pass": "1234"
-                      }
+            "order_total_price": 25.50,
+            "order_items": [
+                {
+                    "supplier_id": "avet-fcb",
+                    "external_order_id": "34C88A4/1112016/145847",
+                    "delivery_method": {
+                        "type": "PASSBOOK"
                     },
-                    {
-                      "id": "125",
-                      "price_level_id": "4345",
-                      "supplier_id": "avet-fcb",
-                      "row": ,
-                      "row_name": "",
-                      "seat": ,
-                      "seat_name": "FREE",
-                      "entrance": "",
-                      "gate": "1",
-                      "block": "1",
-                      "sector": "",
-                      "buyer":{
-                        "personal_id": "455444300E",
-                        "partner_id": "3453",
-                        "partner_pass": "1234"
-                      }
-                    },
-                    {
-                      "id": "1234",
-                      "price_level_id": "4345",
-                      "supplier_id": "avet-fcb",
-                      "row": ,
-                      "row_name": "",
-                      "seat": ,
-                      "seat_name": "FREE",
-                      "entrance": "",
-                      "gate": "1",
-                      "block": "1",
-                      "sector": "",
-                      "buyer":{
-                        "personal_id": "455444300E",
-                        "partner_id": "3453",
-                        "partner_pass": "1234"
-                      }
-                    }
-                ]
-              }
+                    "order_items_total_price": 25.50,
+                    "events":[
+                        {
+                          "event_id": "4345",
+                          "event_date_id": "2",
+                          "remaining_release_seats_time": 125,
+                          "event_total_price": 25.50,
+                          "tickets":[
+                            {
+                                "ticket_id": "342",
+                                "seat_id": "454",
+                                "is_numbered": true,
+                                "price_level_id": "4345",
+                                "row": 20,
+                                "row_name": "20",
+                                "seat": 3,
+                                "seat_name": "3A",
+                                "entrance": "",
+                                "gate": "1",
+                                "block": "1",
+                                "sector": "",
+                                "barcode": "",
+                                "price": 25.50,
+                                "status": "RESERVED",
+                                "buyer": {
+                                    "personal_id": "455444300E",
+                                    "partner_id": "3453",
+                                    "partner_pass": "1234"
+                                }
+                            }
+                          ]
+                        }
+                    ]
+                }
             ],
-            "client_details":{
-
+            "client_details": {
+                "name": "John",
+                "surname": "Smith"
             },
-            "delivery_method":{
-
-            }
             "status": "PREORDER"
         }
 
@@ -657,123 +649,111 @@ This will partially update an order resource, the user are entitled to set the n
 + Request  (application/json)
 
         {
-            "id": "4322",
+            "order_id": "4322",
             "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
-            "events":[
-              {
-                "id": "4345",
-                "event_date_id": "2",
-                "remaining_release_seats_time": 125,
-                "tickets": [
-                    {
-                      "id": "126",
-                      "seat_id": "123",
-                      "price_level_id": "4345",
-                      "supplier_id": "avet-fcb",
-                      "row": 20,
-                      "row_name": "20",
-                      "seat": 3,
-                      "seat_name": "3A",
-                      "entrance": "",
-                      "gate": "1",
-                      "block": "1",
-                      "sector": "",
-                      "buyer":{
-                        "personal_id": "455444300E",
-                        "partner_id": "3453",
-                        "partner_pass": "1234"
-                      }
+            "order_total_price": 25.50,
+            "order_items": [
+                {
+                    "supplier_id": "avet-fcb",
+                    "external_order_id": "34C88A4/1112016/145847",
+                    "delivery_method": {
+                        "type": "PASSBOOK"
                     },
-                    {
-                      "id": "125",
-                      "price_level_id": "4345",
-                      "supplier_id": "avet-fcb",
-                      "row": ,
-                      "row_name": "",
-                      "seat": ,
-                      "seat_name": "FREE",
-                      "entrance": "",
-                      "gate": "1",
-                      "block": "1",
-                      "sector": "",
-                      "buyer":{
-                        "personal_id": "455444300E",
-                        "partner_id": "3453",
-                        "partner_pass": "1234"
-                      }
-                    }
-                ]
-              }
+                    "order_items_total_price": 25.50,
+                    "events":[
+                        {
+                          "event_id": "4345",
+                          "event_date_id": "2",
+                          "remaining_release_seats_time": 125,
+                          "event_total_price": 25.50,
+                          "tickets":[
+                            {
+                                "ticket_id": "342",
+                                "seat_id": "454",
+                                "is_numbered": true,
+                                "price_level_id": "4345",
+                                "row": 20,
+                                "row_name": "20",
+                                "seat": 3,
+                                "seat_name": "3A",
+                                "entrance": "",
+                                "gate": "1",
+                                "block": "1",
+                                "sector": "",
+                                "barcode": "",
+                                "price": 25.50,
+                                "status": "RESERVED",
+                                "buyer": {
+                                    "personal_id": "455444300E",
+                                    "partner_id": "3453",
+                                    "partner_pass": "1234"
+                                }
+                            }
+                          ]
+                        }
+                    ]
+                }
             ],
-            "client_details":{
-              "name": "John",
-              "surname": "Smith"
+            "client_details": {
+                "name": "John",
+                "surname": "Smith"
             },
-            "delivery_method":{
-              "type": "PASSBOOK"
-            }
-            "status": "PAID"
+            "status": "PREORDER"
         }
 
 + Response 200 (application/json)
 
         {
-            "id": "4322",
+            "order_id": "4322",
             "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
-            "events":[
-              {
-                "id": "4345",
-                "event_date_id": "2",
-                "remaining_release_seats_time": 125,
-                "tickets": [
-                  {
-                    "id": "126",
-                    "seat_id": "123",
-                    "price_level_id": "4345",
+            "order_total_price": 25.50,
+            "order_items": [
+                {
                     "supplier_id": "avet-fcb",
-                    "row": 20,
-                    "row_name": "20",
-                    "seat": 3,
-                    "seat_name": "3A",
-                    "entrance": "",
-                    "gate": "1",
-                    "block": "1",
-                    "sector": "",
-                    "buyer":{
-                      "personal_id": "455444300E",
-                      "partner_id": "3453",
-                      "partner_pass": "1234"
-                    }
-                  },
-                  {
-                    "id": "125",
-                    "price_level_id": "4345",
-                    "supplier_id": "avet-fcb",
-                    "row": ,
-                    "row_name": "",
-                    "seat": ,
-                    "seat_name": "FREE",
-                    "entrance": "",
-                    "gate": "1",
-                    "block": "1",
-                    "sector": "",
-                    "buyer":{
-                      "personal_id": "455444300E",
-                      "partner_id": "3453",
-                      "partner_pass": "1234"
-                    }
-                  }
-                ]
-              }
+                    "external_order_id": "34C88A4/1112016/145847",
+                    "delivery_method": {
+                        "type": "PASSBOOK"
+                    },
+                    "order_items_total_price": 25.50,
+                    "events":[
+                        {
+                          "event_id": "4345",
+                          "event_date_id": "2",
+                          "remaining_release_seats_time": 125,
+                          "event_total_price": 25.50,
+                          "tickets":[
+                            {
+                                "ticket_id": "342",
+                                "seat_id": "454",
+                                "is_numbered": true,
+                                "price_level_id": "4345",
+                                "row": 20,
+                                "row_name": "20",
+                                "seat": 3,
+                                "seat_name": "3A",
+                                "entrance": "",
+                                "gate": "1",
+                                "block": "1",
+                                "sector": "",
+                                "barcode": "",
+                                "price": 25.50,
+                                "status": "RESERVED",
+                                "buyer": {
+                                    "personal_id": "455444300E",
+                                    "partner_id": "3453",
+                                    "partner_pass": "1234"
+                                }
+                            }
+                          ]
+                        }
+                    ]
+                }
             ],
-            "client_details":{
-              "name": "John",
-              "surname": "Smith"
+            "client_details": {
+                "name": "John",
+                "surname": "Smith"
             },
-            "delivery_method":{
-              "type": "PASSBOOK"
-            }
-            "status": "PAID"
+            "status": "PREORDER"
         }
 
 + Response 400 (application/json)
@@ -799,92 +779,111 @@ This will manage the seating selection for a given already created order.
 + Request  (application/json)
 
         {
-          "tickets": [
-              {
-                "id": "126",
-                "seat_id": "123",
-                "price_level_id": "4345",
-                "supplier_id": "avet-fcb",
-                "row": 20,
-                "row_name": "20",
-                "seat": 3,
-                "seat_name": "3A",
-                "entrance": "",
-                "gate": "1",
-                "block": "1",
-                "sector": "",
-                "buyer":{
-                  "personal_id": "455444300E",
-                  "partner_id": "3453",
-                  "partner_pass": "1234"
+            "order_id": "4322",
+            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
+            "order_total_price": 25.50,
+            "order_items": [
+                {
+                    "supplier_id": "avet-fcb",
+                    "external_order_id": "34C88A4/1112016/145847",
+                    "delivery_method": {
+                        "type": "PASSBOOK"
+                    },
+                    "order_items_total_price": 25.50,
+                    "events":[
+                        {
+                          "event_id": "4345",
+                          "event_date_id": "2",
+                          "remaining_release_seats_time": 125,
+                          "event_total_price": 25.50,
+                          "tickets":[
+                            {
+                                "ticket_id": "342",
+                                "seat_id": "454",
+                                "is_numbered": true,
+                                "price_level_id": "4345",
+                                "row": 20,
+                                "row_name": "20",
+                                "seat": 3,
+                                "seat_name": "3A",
+                                "entrance": "",
+                                "gate": "1",
+                                "block": "1",
+                                "sector": "",
+                                "barcode": "",
+                                "price": 25.50,
+                                "status": "RESERVED",
+                                "buyer": {
+                                    "personal_id": "455444300E",
+                                    "partner_id": "3453",
+                                    "partner_pass": "1234"
+                                }
+                            }
+                          ]
+                        }
+                    ]
                 }
-              },
-              {
-                "id": "125",
-                "price_level_id": "4345",
-                "supplier_id": "avet-fcb",
-                "row": ,
-                "row_name": "",
-                "seat": ,
-                "seat_name": "FREE",
-                "entrance": "",
-                "gate": "1",
-                "block": "1",
-                "sector": "",
-                "buyer":{
-                  "personal_id": "455444300E",
-                  "partner_id": "3453",
-                  "partner_pass": "1234"
-                }
-              }
-            ]
+            ],
+            "client_details": {
+                "name": "John",
+                "surname": "Smith"
+            },
+            "status": "PREORDER"
         }
 
 + Response 200 (application/json)
 
         {
-            "tickets": [
-              {
-                "id": "126",
-                "total_amount": 1,
-                "is_numbered": true,
-                "price_level_id": "4345",
-                "supplier_id": "avet-fcb",
-                "row": 20,
-                "row_name": "20",
-                "seat": 3,
-                "seat_name": "3A",
-                "entrance": "",
-                "gate": "1",
-                "block": "1",
-                "sector": "",
-                "buyer":{
-                  "personal_id": "455444300E",
-                  "partner_id": "3453",
-                  "partner_pass": "1234"
+            "order_id": "4322",
+            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
+            "order_total_price": 25.50,
+            "order_items": [
+                {
+                    "supplier_id": "avet-fcb",
+                    "external_order_id": "34C88A4/1112016/145847",
+                    "delivery_method": {
+                        "type": "PASSBOOK"
+                    },
+                    "order_items_total_price": 25.50,
+                    "events":[
+                        {
+                          "event_id": "4345",
+                          "event_date_id": "2",
+                          "remaining_release_seats_time": 125,
+                          "event_total_price": 25.50,
+                          "tickets":[
+                            {
+                                "ticket_id": "342",
+                                "seat_id": "454",
+                                "is_numbered": true,
+                                "price_level_id": "4345",
+                                "row": 20,
+                                "row_name": "20",
+                                "seat": 3,
+                                "seat_name": "3A",
+                                "entrance": "",
+                                "gate": "1",
+                                "block": "1",
+                                "sector": "",
+                                "barcode": "",
+                                "price": 25.50,
+                                "status": "RESERVED",
+                                "buyer": {
+                                    "personal_id": "455444300E",
+                                    "partner_id": "3453",
+                                    "partner_pass": "1234"
+                                }
+                            }
+                          ]
+                        }
+                    ]
                 }
-              },
-              {
-                "id": "125",
-                "total_amount": 1,
-                "is_numbered": false,
-                "price_level_id": "4345",
-                "supplier_id": "avet-fcb",
-                "row": ,
-                "row_name": "",
-                "seat": ,
-                "seat_name": "FREE",
-                "entrance": "",
-                "gate": "1",
-                "block": "1",
-                "sector": "",
-                "buyer":{
-                  "personal_id": "455444300E",
-                  "partner_id": "3453",
-                  "partner_pass": "1234"
-                }
-              }
-          ]
+            ],
+            "client_details": {
+                "name": "John",
+                "surname": "Smith"
+            },
+            "status": "PREORDER"
         }
 
 + Response 400 (application/json)
@@ -908,89 +907,111 @@ This will manage the seating selection for a given already created order.
 + Request  (application/json)
 
         {
-          "tickets": [
-              {
-                "id": "1234",
-                "price_level_id": "4345",
-                "supplier_id": "avet-fcb",
-                "row": ,
-                "row_name": "",
-                "seat": ,
-                "seat_name": "FREE",
-                "entrance": "",
-                "gate": "",
-                "block": "",
-                "sector": "",
-                "buyer":{
-                  "personal_id": "455444300E",
-                  "partner_id": "3453",
-                  "partner_pass": "1234"
+            "order_id": "4322",
+            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
+            "order_total_price": 25.50,
+            "order_items": [
+                {
+                    "supplier_id": "avet-fcb",
+                    "external_order_id": "34C88A4/1112016/145847",
+                    "delivery_method": {
+                        "type": "PASSBOOK"
+                    },
+                    "order_items_total_price": 25.50,
+                    "events":[
+                        {
+                          "event_id": "4345",
+                          "event_date_id": "2",
+                          "remaining_release_seats_time": 125,
+                          "event_total_price": 25.50,
+                          "tickets":[
+                            {
+                                "ticket_id": "342",
+                                "seat_id": "454",
+                                "is_numbered": true,
+                                "price_level_id": "4345",
+                                "row": 20,
+                                "row_name": "20",
+                                "seat": 3,
+                                "seat_name": "3A",
+                                "entrance": "",
+                                "gate": "1",
+                                "block": "1",
+                                "sector": "",
+                                "barcode": "",
+                                "price": 25.50,
+                                "status": "RESERVED",
+                                "buyer": {
+                                    "personal_id": "455444300E",
+                                    "partner_id": "3453",
+                                    "partner_pass": "1234"
+                                }
+                            }
+                          ]
+                        }
+                    ]
                 }
-              }
-          ]
+            ],
+            "client_details": {
+                "name": "John",
+                "surname": "Smith"
+            },
+            "status": "PREORDER"
         }
 
 + Response 200 (application/json)
 
         {
-            "seats": [
-              {
-                "id": "126",
-                "price_level_id": "4345",
-                "supplier_id": "avet-fcb",
-                "row": 20,
-                "row_name": "20",
-                "seat": 5,
-                "seat_name": "3A",
-                "entrance": "",
-                "gate": "1",
-                "block": "1",
-                "sector": "",
-                "buyer":{
-                  "personal_id": "455444300E",
-                  "partner_id": "3453",
-                  "partner_pass": "1234"
+            "order_id": "4322",
+            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
+            "order_total_price": 25.50,
+            "order_items": [
+                {
+                    "supplier_id": "avet-fcb",
+                    "external_order_id": "34C88A4/1112016/145847",
+                    "delivery_method": {
+                        "type": "PASSBOOK"
+                    },
+                    "order_items_total_price": 25.50,
+                    "events":[
+                        {
+                          "event_id": "4345",
+                          "event_date_id": "2",
+                          "remaining_release_seats_time": 125,
+                          "event_total_price": 25.50,
+                          "tickets":[
+                            {
+                                "ticket_id": "342",
+                                "seat_id": "454",
+                                "is_numbered": true,
+                                "price_level_id": "4345",
+                                "row": 20,
+                                "row_name": "20",
+                                "seat": 3,
+                                "seat_name": "3A",
+                                "entrance": "",
+                                "gate": "1",
+                                "block": "1",
+                                "sector": "",
+                                "barcode": "",
+                                "price": 25.50,
+                                "status": "RESERVED",
+                                "buyer": {
+                                    "personal_id": "455444300E",
+                                    "partner_id": "3453",
+                                    "partner_pass": "1234"
+                                }
+                            }
+                          ]
+                        }
+                    ]
                 }
-              },
-              {
-                "id": "125",
-                "total_amount": 1,
-                "is_numbered": false,
-                "price_level_id": "4345",
-                "supplier_id": "avet-fcb",
-                "row": ,
-                "row_name": "",
-                "seat": ,
-                "seat_name": "FREE",
-                "entrance": "",
-                "gate": "1",
-                "block": "1",
-                "sector": "",
-                "buyer":{
-                  "personal_id": "455444300E",
-                  "partner_id": "3453",
-                  "partner_pass": "1234"
-                }
-              },
-              {
-                "id": "1234",
-                "price_level_id": "4345",
-                "supplier_id": "avet-fcb",
-                "row": ,
-                "row_name": "",
-                "seat": ,
-                "seat_name": "FREE",
-                "entrance": "",
-                "gate": "",
-                "block": "",
-                "sector": "",
-                "buyer":{
-                  "personal_id": "455444300E",
-                  "partner_id": "3453",
-                  "partner_pass": "1234"
-                }
-              }
-          ]
+            ],
+            "client_details": {
+                "name": "John",
+                "surname": "Smith"
+            },
+            "status": "PREORDER"
         }
 
 + Response 400 (application/json)
