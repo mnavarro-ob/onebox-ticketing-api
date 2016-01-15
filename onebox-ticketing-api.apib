@@ -92,7 +92,7 @@ Collection of events and its session dates.
     + city_id (optional, string) ... Filter by a given city id.
     + latitude (optional, number) ... It needs a longitude and radius params to search arround a GPS location.
     + longitude (optional, number) ... It needs a latitude and radius params to search arround a GPS location.
-    + radius (optional, number) ... Filter by a radius applied arround a GPS location.
+    + radius (optional, number) ... Filter by a radius applied arround a GPS location.     
     + is_seats_available (optional, enum[boolean])
       Filter whether is any seat available to book or not:
         + Members
@@ -231,6 +231,10 @@ See below the description of the response fields we consider that need to be exp
     + end_date (optional, date) ... Filter by final date
     + page (optional, number) ... Paginate response to the given page number
     + page_size (optional, number) ... Indicate the maximum number of elements per page.
+    + city_id (optional, string) ... Filter by a given city id.
+    + latitude (optional, number) ... It needs a longitude and radius params to search arround a GPS location.
+    + longitude (optional, number) ... It needs a latitude and radius params to search arround a GPS location.
+    + radius (optional, number) ... Filter by a radius applied arround a GPS location.
 
 + Response 200 (application/json)
 
