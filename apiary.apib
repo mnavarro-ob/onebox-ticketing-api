@@ -509,11 +509,21 @@ Retrieve the static data needed for mapping and quering purposes. You will be ab
 
 ### Create a new order [POST]
 
-This will create a new order resource, the user are entitled to set the number of wished seats by a given price_zone, to set detailed allocation if venue configuration allow you, to set the buyer personal details and delivery method. And overall, a client will be able to perform it directly (direct confirm) or in two steps (first lock the seats -default- getting a temporal token, then confirm the seats if already paid receving the final locator). Possible statues available are:
-      + `INITIATE` - Null value to set up an empty order
-      + `PREORDER` - Lock tickets for a while
-      + `PAID` - Mark tickets as paid and confirmed
-If the allocation (seat_id) is not known, the system will automatically allocate the number of seats from "seats_number" field. System will always try to allocate the best seats available. If the desired seating is not numbered, then only the price_level_id is needed.
+This will create a new order resource, the user are entitled to set the number of wished seats by 
+a given price_zone, to set detailed allocation if venue 
+configuration allow you, to set the buyer personal details and delivery method. 
+And overall, a client will be able to perform it directly (direct confirm) or in two steps 
+(first lock the seats -default- getting a temporal token, then confirm the seats if already 
+paid receving the final locator). Possible statues available are:
+
+ + `INITIATE` - Null value to set up an empty order.
+ + `PREORDER` - Lock tickets for a while.
+ + `PAID` - Mark tickets as paid and confirmed.
+    
+    
+If the allocation (seat_id) is not known, the system will automatically allocate the number of seats from "seats_number" field. 
+System will always try to allocate the best seats available. 
+If the desired seating is not numbered, then only the price_level_id is needed.
 
 + Request  (application/json)
 
@@ -639,16 +649,21 @@ If the allocation (seat_id) is not known, the system will automatically allocate
           "error_description": "Full authentication is required to access this resource"
         }
 
-### Partial update of an order [PATCH]
 
-This will partially update an order resource, the user are entitled to set the number of wished seats by a given price_zone, to set detailed allocation if venue configuration allow you, to set the buyer personal details and delivery method. And overall, a client will be able to perform it directly (direct confirm) or in two steps (first lock the seats -default- getting a temporal token, then confirm the seats if already paid receving the final locator). Possible statues available are:
-      + `INITIATE` - Null value to set up an empty order
-      + `PREORDER` - Lock tickets for a while
-      + `PAID` - Mark tickets as paid and confirmed
+### Modify an order [PUT /orders/{id}]
+
+This will update an order resource, the user are entitled to set the number of wished seats by a given price_zone, 
+to set detailed allocation if venue configuration allow you, to set the buyer personal details and delivery method. And overall, a client will be able to perform it directly (direct confirm) or in two steps (first lock the seats -default- getting a temporal token, then confirm the seats if already paid receving the final locator). Possible statues available are:
+
+ + `INITIATE` - Null value to set up an empty order
+ + `PREORDER` - Lock tickets for a while
+ + `PAID` - Mark tickets as paid and confirmed
+ 
 
 + Parameters
+  
+  + id (required, string) ... Update the order identified by this id
 
-    + id (required, string) ... Update the order identified by this id
 
 + Request  (application/json)
 
@@ -770,13 +785,13 @@ This will partially update an order resource, the user are entitled to set the n
 + Response 401 (application/json)
 
         {
-          "error": "unauthorized",
-          "error_description": "Full authentication is required to access this resource"
+            "error": "unauthorized",
+            "error_description": "Full authentication is required to access this resource"
         }
 
-## Tickets seat operations [/orders/{order_id}/tickets/{id}]
+## Tickets seat operations [/orders/{order_id}/tickets]
 
-### Update the entire seats list [PUT]
+### Add a new ticket to the order [POST]
 
 This will manage the seating selection for a given already created order.
 
@@ -904,140 +919,15 @@ This will manage the seating selection for a given already created order.
           "error_description": "Full authentication is required to access this resource"
         }
 
-### Partial update of the tickets seat list [PATCH]
-
-This will manage the seating selection for a given already created order.
-
-+ Request  (application/json)
-
-        {
-            "order_id": "4322",
-            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
-            "order_total_price": 25.50,
-            "order_items": [
-                {
-                    "supplier_id": "avet-fcb",
-                    "external_order_id": "34C88A4/1112016/145847",
-                    "delivery_method": {
-                        "type": "PASSBOOK"
-                    },
-                    "order_items_total_price": 25.50,
-                    "events":[
-                        {
-                          "event_id": "4345",
-                          "event_date_id": "2",
-                          "remaining_release_seats_time": 125,
-                          "event_total_price": 25.50,
-                          "tickets":[
-                            {
-                                "ticket_id": "342",
-                                "seat_id": "454",
-                                "is_numbered": true,
-                                "price_level_id": "4345",
-                                "row": 20,
-                                "row_name": "20",
-                                "seat": 3,
-                                "seat_name": "3A",
-                                "entrance": "",
-                                "gate": "1",
-                                "block": "1",
-                                "sector": "",
-                                "barcode": "",
-                                "price": 25.50,
-                                "status": "RESERVED",
-                                "buyer": {
-                                    "personal_id": "455444300E",
-                                    "partner_id": "3453",
-                                    "partner_pass": "1234"
-                                }
-                            }
-                          ]
-                        }
-                    ]
-                }
-            ],
-            "client_details": {
-                "name": "John",
-                "surname": "Smith"
-            },
-            "status": "PREORDER"
-        }
-
-+ Response 200 (application/json)
-
-        {
-            "order_id": "4322",
-            "preorder_id": "fksjfkajhkfj4kj53k45j3knrkfndkfn",
-            "order_total_price": 25.50,
-            "order_items": [
-                {
-                    "supplier_id": "avet-fcb",
-                    "external_order_id": "34C88A4/1112016/145847",
-                    "delivery_method": {
-                        "type": "PASSBOOK"
-                    },
-                    "order_items_total_price": 25.50,
-                    "events":[
-                        {
-                          "event_id": "4345",
-                          "event_date_id": "2",
-                          "remaining_release_seats_time": 125,
-                          "event_total_price": 25.50,
-                          "tickets":[
-                            {
-                                "ticket_id": "342",
-                                "seat_id": "454",
-                                "is_numbered": true,
-                                "price_level_id": "4345",
-                                "row": 20,
-                                "row_name": "20",
-                                "seat": 3,
-                                "seat_name": "3A",
-                                "entrance": "",
-                                "gate": "1",
-                                "block": "1",
-                                "sector": "",
-                                "barcode": "",
-                                "price": 25.50,
-                                "status": "RESERVED",
-                                "buyer": {
-                                    "personal_id": "455444300E",
-                                    "partner_id": "3453",
-                                    "partner_pass": "1234"
-                                }
-                            }
-                          ]
-                        }
-                    ]
-                }
-            ],
-            "client_details": {
-                "name": "John",
-                "surname": "Smith"
-            },
-            "status": "PREORDER"
-        }
-
-+ Response 400 (application/json)
-
-        {
-          "error": "Bad request",
-          "error_description": "There was a syntax error, check your params request and try it again."
-        }
-
-+ Response 401 (application/json)
-
-        {
-          "error": "unauthorized",
-          "error_description": "Full authentication is required to access this resource"
-        }
-
-### Delete a ticket seat [DELETE]
+### Delete a ticket seat [DELETE /orders/{order_id}/tickets/{ticket_id}{?externalOrderId,eventDateId}]
 
 This will delete the given seat from an already created order.
 
 + Parameters
-    + id (required, string) ... Indicate a concrete ticket seat from an order.
+  + order_id (required, string) ... Indicate a concrete ticket seat from an order.
+  + ticket_id (required, number) ... Indicate a concrete ticket seat from an order.
+  + externalOrderId (required, string) ... The external order identifies
+  + eventDateId (required, number) ... The event date identifier of the ticket
 
 + Response 204 (application/json)
 
